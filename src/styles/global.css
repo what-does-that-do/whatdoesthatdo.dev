@@ -3,15 +3,30 @@
 @import "@fontsource/vt323";
 
 body {
-    @apply bg-black text-white font-sans m-5 mt-10;
+    @apply bg-white dark:bg-black font-sans m-5 mt-10 text-text-light dark:text-text-dark;
 }
 
 h1 {
-    @apply text-4xl font-bold  duration-500 hover:text-primary cursor-default;
+    @apply text-4xl font-bold  duration-500 cursor-default;
 }
 
 @theme {
     --font-display: "Lexend Deca", sans-serif;
     --font-link: "VT323", monospace;
+
+    --color-text-light: black;
+    --color-text-dark: white;
+
     --color-primary: #006ef4;
+    --color-bg-light: #bdbdbd;
+    --color-bg-dark: #334451;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
