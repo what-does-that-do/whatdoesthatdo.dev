@@ -1,11 +1,15 @@
 ---
 import './src/styles/global.css';
+import HeaderLink from './headerLink.astro';
 ---
 <div class="fixed top-0 left-0 w-full px-4 py-2 bg-transparent">
-    <div class="w-full h-16 flex bg-gray-800 rounded-xl p-3 backdrop-filter-blur-[10%] opacity-90">
+    <div class="w-full h-16 flex bg-gray-800/60 rounded-xl p-3 backdrop-blur-md">
         <div class="opacity-100 flex items-center justify-between">
             <h1 class="font-display">Oli</h1>
-            <a href="/projects" class="font-link ml-2 text-3xl">Projects</a>
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink href="/projects">Projects</HeaderLink>
+            <HeaderLink href="/contact">Contact</HeaderLink>
         </div>
     </div>
 </div>

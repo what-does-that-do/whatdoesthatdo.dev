@@ -1,0 +1,7 @@
+---
+import './src/styles/global.css';
+const { href } = Astro.props;
+---
+<a href="{href}" class="font-link ml-4 text-3xl hover:text-primary hover:text-4xl transition-scale duration-200">
+    <slot />
+</a>
