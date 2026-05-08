@@ -1,0 +1,86 @@
+---
+import './src/styles/global.css';
+import HeaderLink from './headerLink.astro';
+import MobileNav from './mobileNav.astro';
+
+import { IconBrandGithub, IconBrandLinkedin, IconMail, IconMenu2 } from '@tabler/icons-react';
+import { IconChevronUp } from '@tabler/icons-react';
+---
+<div class="fixed top-0 left-0 py-2 bg-transparent w-full pl-2 pr-2">
+    <div class="w-full h-16 flex bg-bg-light/60 dark:bg-bg-dark/60 rounded-2xl p-3 backdrop-blur-md">
+        <div class="opacity-100 flex items-center justify-between w-full">
+            <div class="flex items-center">
+                <img src="https://avatars.githubusercontent.com/u/147245351?s=96" alt="what-does-that-do" class="w-12 h-12 rounded-full mr-4 pointer" />
+                <h1 class="font-display">Oli</h1>
+            </div>
+            <div class="md:block hidden">
+                <HeaderLink href="/">Home</HeaderLink>
+                <HeaderLink href="/about">About</HeaderLink>
+                <HeaderLink href="/projects">Projects</HeaderLink>
+                <HeaderLink href="/contact">Contact</HeaderLink>
+            </div>
+            <div class="hidden md:flex items-center gap-0.5">
+                <HeaderLink href="https://github.com/what-does-that-do/" isIconButton={true}>
+                    <IconBrandGithub className='w-[36px] h-[36px]' />
+                </HeaderLink>
+                <HeaderLink href="https://linkedin.com/in/ocorrigan/" isIconButton={true}>
+                    <IconBrandLinkedin className='w-[36px] h-[36px]' />
+                </HeaderLink>
+                <HeaderLink href="/contact" isIconButton={true}>
+                    <IconMail className='w-[36px] h-[36px]' />
+                </HeaderLink>
+            </div>
+
+            <div id="hamburger" class="md:hidden" onclick="toggleMobNav()">
+                <IconMenu2 className='w-[36px] h-[36px]' />
+            </div>
+            
+            <div id="downArrow" class="hidden" onclick="toggleMobNav()">
+                <IconChevronUp className="w-[36px] h-[36px]" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mobileNav" class="hidden">
+    <MobileNav id="navbox" />
+</div>
+
+<script>
+    const mobileNav = document.getElementById('mobileNav');
+    const navbox = document.getElementById('navbox');
+    const hamburger = document.getElementById('hamburger');
+    const downArrow = document.getElementById('downArrow');
+
+    window.toggleMobNav = function () {
+        if (mobileNav.classList.contains('hidden')) {
+            mobileNav.classList.remove('hidden');
+            hamburger.classList.add('hidden');
+            downArrow.classList.remove('hidden');
+
+            navbox.animate([
+                { transform: 'translateY(-150%)' },
+                { transform: 'translateY(0)' }
+            ], {
+                duration: 300,
+                fill: 'forwards',
+                easing: 'ease-in-out'
+            });
+        } else {
+            downArrow.classList.add('hidden');
+            hamburger.classList.remove('hidden');
+
+            navbox.animate([
+                { transform: 'translateY(0)' },
+                { transform: 'translateY(-150%)' }
+            ], {
+                duration: 300,
+                fill: 'forwards',
+                easing: 'ease-in-out'
+            });
+            setTimeout(() => {
+                mobileNav.classList.add('hidden');
+            }, 300);
+        }
+    }
+</script>

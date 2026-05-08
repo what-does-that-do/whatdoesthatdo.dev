@@ -1,12 +1,43 @@
 ---
+import { IconMapPin, IconBriefcase, IconArrowNarrowUp } from "@tabler/icons-react";
 import MainLayout from "../layouts/mainLayout.astro";
 import './src/styles/global.css';
+
+import GradientSection from "@/components/ui/gradientSection.astro";
+import MediaBox from "@/components/ui/mediaBox.astro";
+
 ---
 
 <MainLayout>
-	<h1 class="font-display">Hi, I'm Oli!</h1>
-	<p class="text-bg-dark dark:text-bg-light">GitHub: <a class="hover:underline cursor-pointer" href="https://github.com/what-does-that-do" target="_blank">@what-does-that-do</a></p>
+	<GradientSection className="h-[600px] pt-20 p-2 flex flex-col md:flex-row overflow-hidden">
+		<div class="order-3 md:order-1 flex flex-col-reverse h-full">
+			<div>
+				<div class="md:hidden flex flex-row items-start gap-3">
+					<h1 class="font-display text-white pt-1">Hi, I'm</h1>
+					<p class="font-display text-5xl text-white">Oliver</p>
+				</div>
+
+				<h1 class="hidden md:block font-display text-white md:pt-1">Hi, I'm</h1>
+				<p class="hidden md:block font-display text-5xl text-white">Oliver</p>
+				
+				<div class="md:grid grid-cols-1 md:grid-cols-2 grid-cols-row-1 md:grid-row-2 gap-5 overflow-hidden">
+					<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Science student</p>
+					<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="order-2 hidden xl:block xl:grow"></div>
+
+		<div class="order-1 md:order-3 justify-self-end grow flex-col-reverse">
+			<MediaBox className="h-[360px] md:h-[480px] w-[640px] justify-self-center">
+				<iframe class="w-full h-full" src="https://www.youtube.com/embed/CpCC2fTn0os?si=0DEHAeeGAR5nC2ME&start=6955&autoplay=1&controls=0&showinfo=0&autohide=1" title="Twemima Robot" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</MediaBox>
+			<p class="text-white pt-2 text-right">Our robot at Student Robotics 2024! <a href="/projects/robotics">Read more here.</a> <IconArrowNarrowUp className="inline"></IconArrowNarrowUp></p>
+		</div>
+	</GradientSection>
 	<p>I'm student software developer based near Cambridge, UK.</p>
 	<p>Usually you'll find me solving a niche problem, creating a hacky project with a Raspberry Pi, coding a solution to something, building a model railway, volunteering at the <a href="https://suffolkhedgehoghospital.com" target="_blank">Suffolk Hedgehog Hospital</a> or <a href="https://robocon.uk/news/robocon-2025-review/" target="_blank">playing with robots</a> (ex-RoboCon leader).</p>
 	<p>Why "what-does-that-do"? Well, I enjoy solving problems through code and electronics, but most importantly asking 'what does this do', unafraid to fall down a rabbit hole never to return...</p>
 </MainLayout>
+

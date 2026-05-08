@@ -1,15 +1,18 @@
 @import "tailwindcss";
 @import "@fontsource/lexend-deca";
 @import "@fontsource/vt323";
+@import "../../node_modules/flyonui/variants.css"; /* Require only if you want to use FlyonUI JS component */
 
-@import "./theme.css";
 
 @plugin "tailwindcss-animate";
 @plugin "tailwindcss-react-aria-components";
+@plugin "flyonui";
 
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));
 @custom-variant label (& [data-label]);
 @custom-variant focus-input-within (&:has(input:focus));
+
+@source "./node_modules/flyonui/dist/index.js"; /* Require only if you want to use FlyonUI JS component */
 
 @utility scrollbar-hide {
     /* For Webkit-based browsers (Chrome, Safari and Opera) */
@@ -70,7 +73,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 body {
-    @apply bg-white dark:bg-black font-sans m-5 mt-0 text-text-light dark:text-text-dark;
+    @apply bg-white dark:bg-black font-sans mt-0 text-text-light dark:text-text-dark;
 }
 
 h1 {

@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { Header } from '../components/header';
+import Header from '@/components/ui/header.astro';
 const title = Astro.props.title || 'Oli (what-does-that-do)';
 ---
 <html lang="en">
@@ -11,10 +11,11 @@ const title = Astro.props.title || 'Oli (what-does-that-do)';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="m-0 p-0">
         <Header></Header>
 		<main>
             <slot />
         </main>
+		<script src="../../node_modules/flyonui/flyonui.js"></script>
 	</body>
 </html>
