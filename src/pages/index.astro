@@ -1,25 +1,73 @@
 ---
-import { IconMapPin, IconBriefcase, IconArrowNarrowUp } from "@tabler/icons-react";
+import { IconMapPin, IconBriefcase, IconArrowNarrowUp, IconArrowNarrowRight, IconArrowNarrowLeft } from "@tabler/icons-react";
 import MainLayout from "../layouts/mainLayout.astro";
 import './src/styles/global.css';
 
 import GradientSection from "@/components/ui/gradientSection.astro";
 import MediaBox from "@/components/ui/mediaBox.astro";
 import ProfilePhoto from "@/components/ui/profilePhoto.astro";
+import ProjectCard from "@/components/ui/projectCard.astro";
+
+import { Button } from "@/components/ui/button";
+
+const projects = [
+	{
+		title: "Wildlife & Woolly Art",
+		desc: "I setup the shop and website for a Suffolk artist.",
+		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
+		link: "https://wildlifeandwoollyart.co.uk",
+		article: "/projects/wildlifeandwoollyart"
+	},
+	{
+		title: "Wildlife & Woolly Art",
+		desc: "I setup the shop and website for a Suffolk artist.",
+		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
+		link: "https://wildlifeandwoollyart.co.uk",
+		article: "/projects/wildlifeandwoollyart"
+	},
+	{
+		title: "Wildlife & Woolly Art",
+		desc: "I setup the shop and website for a Suffolk artist.",
+		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
+		link: "https://wildlifeandwoollyart.co.uk",
+		article: "/projects/wildlifeandwoollyart"
+	},
+	{
+		title: "Wildlife & Woolly Art",
+		desc: "I setup the shop and website for a Suffolk artist.",
+		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
+		link: "https://wildlifeandwoollyart.co.uk",
+		article: "/projects/wildlifeandwoollyart"
+	},
+	{
+		title: "Wildlife & Woolly Art",
+		desc: "I setup the shop and website for a Suffolk artist.",
+		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
+		link: "https://wildlifeandwoollyart.co.uk",
+		article: "/projects/wildlifeandwoollyart"
+	},
+	{
+		title: "Wildlife & Woolly Art",
+		desc: "I setup the shop and website for a Suffolk artist.",
+		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
+		link: "https://wildlifeandwoollyart.co.uk",
+		article: "/projects/wildlifeandwoollyart"
+	}
+]
 ---
 
 <MainLayout>
-	<GradientSection className="h-[600px] pt-20 p-2 flex flex-col md:flex-row overflow-hidden">
+	<GradientSection className="h-[600px] pt-20 p-2 lg:px-10 flex flex-col md:flex-row overflow-hidden">
 		<div class="order-3 md:order-1 flex flex-col-reverse h-full">
 			<div>
 				<div class="flex">
-					<ProfilePhoto src="https://avatars.githubusercontent.com/u/147245351?s=96" size="96"></ProfilePhoto>
+					<ProfilePhoto src="https://avatars.githubusercontent.com/u/147245351?s=96" size="96" className="mr-2"></ProfilePhoto>
 					<div class="md:hidden">
 						<div class="flex flex-row items-start gap-3">
-							<h1 class="font-display text-white pt-1">Hi, I'm</h1>
-							<p class="font-display text-5xl text-white">Oliver</p>
+							<h1 class="font-display text-2xl sm:text-3xl text-white pt-1">Hi, I'm</h1>
+							<h1 class="font-display text-2xl sm:text-5xl text-white pt-1">Oliver</h1>
 						</div>
-						<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Science student</p>
+						<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Sci. student</p>
 						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
 					</div>
 
@@ -46,8 +94,77 @@ import ProfilePhoto from "@/components/ui/profilePhoto.astro";
 			<p class="text-white pt-2 text-right">Our team HRS robot at Student Robotics 2024!<IconArrowNarrowUp className="inline"></IconArrowNarrowUp></p>
 		</div>
 	</GradientSection>
-	<p>I'm student software developer based near Cambridge, UK.</p>
-	<p>Usually you'll find me solving a niche problem, creating a hacky project with a Raspberry Pi, coding a solution to something, building a model railway, volunteering at the <a href="https://suffolkhedgehoghospital.com" target="_blank">Suffolk Hedgehog Hospital</a> or <a href="https://robocon.uk/news/robocon-2025-review/" target="_blank">playing with robots</a> (ex-RoboCon leader).</p>
-	<p>Why "what-does-that-do"? Well, I enjoy solving problems through code and electronics, but most importantly asking 'what does this do', unafraid to fall down a rabbit hole never to return...</p>
-</MainLayout>
 
+	<div class="w-full bg-[#0d0730] text-white py-8">
+		<h1 class="font-display text-center text-white">My Projects</h1>
+		<p class="text-center pt-2">Take a look at the projects and work I've completed!</p>
+		<div class="mx-10 my-5">
+			<div class="flex">
+				<div class="hidden md:flex flex-col mr-2">
+					<div class="grow"></div>
+					<Button variant="outline" size="icon" className="dark" data-proj-scroll-left>
+						<IconArrowNarrowLeft></IconArrowNarrowLeft>
+					</Button>
+					<div class="grow"></div>
+				</div>
+
+				<div id="project-gallery" class="flex overflow-y-scroll scrollbar-hide gap-1 scroll-smooth" data-proj-gallery>
+					{projects.map((project) => (
+						<ProjectCard
+							title={project.title}
+							desc={project.desc}
+							coverImage={project.coverImage}
+							link={project.link}
+							article={project.article}>
+						</ProjectCard>
+					))}
+				</div>
+
+				<div class="hidden md:flex flex-col ml-2">
+					<div class="grow"></div>
+					<Button variant="outline" size="icon" className="dark" data-proj-scroll-right>
+						<IconArrowNarrowRight></IconArrowNarrowRight>
+					</Button>
+					<div class="grow"></div>
+				</div>
+			</div>
+		</div>
+		<div class="flex ">
+			<div class="grow" />
+			<div>
+				<Button variant="outline" size="icon" className="dark md:hidden" data-proj-scroll-left>
+					<IconArrowNarrowLeft></IconArrowNarrowLeft>
+				</Button>
+				<Button className="dark">View all</Button>
+				<Button variant="outline" size="icon" className="dark md:hidden" data-proj-scroll-right>
+					<IconArrowNarrowRight></IconArrowNarrowRight>
+				</Button>
+
+			</div>
+			<div class="grow" />
+		</div>
+	</div>
+
+	</MainLayout>
+
+<script>
+// Find our component DOM on the page.
+const rightScroll = document.querySelectorAll('[data-proj-scroll-right]');
+const leftScroll = document.querySelectorAll('[data-proj-scroll-left]');
+const projects = document.getElementById("project-gallery")
+
+function projScroll(right) {
+	if (right) {
+		projects.scrollLeft += 250;
+	} else {
+		projects.scrollLeft -= 250;
+	}
+}
+
+rightScroll.forEach((btn) => {
+	btn.addEventListener("click", function() {projScroll(1)})
+})
+leftScroll.forEach((btn) => {
+	btn.addEventListener("click", function() {projScroll(0)})
+})
+</script>

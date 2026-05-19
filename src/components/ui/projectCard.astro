@@ -1,0 +1,45 @@
+---
+import "./src/styles/global.css";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardAction,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const coverImage = Astro.props.coverImage;
+const title = Astro.props.title;
+const desc = Astro.props.desc;
+const link = Astro.props.projectLink;
+const article = Astro.props.projectArticle;
+
+function goToProject() {
+    window.location.href = link;
+}
+
+function goToArticle() {
+    window.location.href = article;
+}
+---
+
+<Card className="dark relative mx-auto w-full min-w-[300px] max-w-sm pt-0 shadow z-10">
+  <div class="absolute inset-0 z-30 aspect-video bg-black/35"></div>
+  <img
+    src={coverImage}
+    alt={title}
+    class="relative z-20 aspect-video w-full object-cover"
+  />
+  <CardHeader>
+    <CardTitle>{title}</CardTitle>
+    <CardDescription>{desc}</CardDescription>
+  </CardHeader>
+  <CardFooter>
+    <div class="flex w-full">
+        <Button className="grow" onClick={goToProject}>View</Button>
+        <Button className="grow" variant="outline" onClick={goToArticle}>Read Article</Button>
+    </div>
+  </CardFooter>
+</Card>
