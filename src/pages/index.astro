@@ -5,24 +5,34 @@ import './src/styles/global.css';
 
 import GradientSection from "@/components/ui/gradientSection.astro";
 import MediaBox from "@/components/ui/mediaBox.astro";
-
+import ProfilePhoto from "@/components/ui/profilePhoto.astro";
 ---
 
 <MainLayout>
 	<GradientSection className="h-[600px] pt-20 p-2 flex flex-col md:flex-row overflow-hidden">
 		<div class="order-3 md:order-1 flex flex-col-reverse h-full">
 			<div>
-				<div class="md:hidden flex flex-row items-start gap-3">
-					<h1 class="font-display text-white pt-1">Hi, I'm</h1>
-					<p class="font-display text-5xl text-white">Oliver</p>
-				</div>
+				<div class="flex">
+					<ProfilePhoto src="https://avatars.githubusercontent.com/u/147245351?s=96" size="96"></ProfilePhoto>
+					<div class="md:hidden">
+						<div class="flex flex-row items-start gap-3">
+							<h1 class="font-display text-white pt-1">Hi, I'm</h1>
+							<p class="font-display text-5xl text-white">Oliver</p>
+						</div>
+						<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Science student</p>
+						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
+					</div>
 
-				<h1 class="hidden md:block font-display text-white md:pt-1">Hi, I'm</h1>
-				<p class="hidden md:block font-display text-5xl text-white">Oliver</p>
+					<div>
+						<h1 class="hidden md:block font-display text-white md:pt-1">Hi, I'm</h1>
+						<p class="hidden md:block font-display text-5xl text-white">Oliver</p>
+					</div>
+				</div>
 				
-				<div class="md:grid grid-cols-1 md:grid-cols-2 grid-cols-row-1 md:grid-row-2 gap-5 overflow-hidden">
+				
+				<div class="hidden md:block md:grid grid-cols-1 md:grid-cols-2 grid-cols-row-1 md:grid-row-2 gap-5 overflow-hidden">
 					<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Science student</p>
-					<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge</p>
+					<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
 				</div>
 			</div>
 		</div>
@@ -33,7 +43,7 @@ import MediaBox from "@/components/ui/mediaBox.astro";
 			<MediaBox className="h-[360px] md:h-[480px] w-[640px] justify-self-center">
 				<iframe class="w-full h-full" src="https://www.youtube.com/embed/CpCC2fTn0os?si=0DEHAeeGAR5nC2ME&start=6955&autoplay=1&controls=0&showinfo=0&autohide=1" title="Twemima Robot" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</MediaBox>
-			<p class="text-white pt-2 text-right">Our robot at Student Robotics 2024! <a href="/projects/robotics">Read more here.</a> <IconArrowNarrowUp className="inline"></IconArrowNarrowUp></p>
+			<p class="text-white pt-2 text-right">Our team HRS robot at Student Robotics 2024!<IconArrowNarrowUp className="inline"></IconArrowNarrowUp></p>
 		</div>
 	</GradientSection>
 	<p>I'm student software developer based near Cambridge, UK.</p>
