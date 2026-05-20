@@ -9,6 +9,7 @@
 
 @plugin "tailwindcss-animate";
 @plugin "tailwindcss-react-aria-components";
+@plugin "@eioluseyi/tailwind-fade";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));
