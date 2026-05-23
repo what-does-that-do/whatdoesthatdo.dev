@@ -1,0 +1,55 @@
+---
+import "./src/styles/global.css";
+import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardAction,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const coverImage = Astro.props.coverImage;
+const title = Astro.props.title;
+const desc = Astro.props.desc;
+const link = Astro.props.link;
+const article = Astro.props.article;
+---
+
+<Card className="dark relative mx-auto w-full min-w-[300px] max-w-lg h-[150px] pt-0 shadow flex flex-row pb-0 my-3">
+  <div class="shrink w-2/5">
+    <img
+      src={coverImage}
+      alt={title}
+      class="relative z-20 w-full object-cover"
+    />
+  </div>
+  <div class="grow flex flex-col">
+    <div class="grow"></div>
+    <div>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{desc}</CardDescription>
+      </CardHeader>
+      <CardFooter>
+        <div class="flex w-full">
+            <a
+              href={link}
+              class={"grow " + buttonVariants({ })}
+            >
+              View
+            </a>
+            <a
+              href={article}
+              class={"grow " + buttonVariants({ variant: "outline" })}
+            >
+              Read Article
+            </a>
+        </div>
+      </CardFooter>
+    </div>
+    <div class="grow"></div>
+  </div>
+</Card>

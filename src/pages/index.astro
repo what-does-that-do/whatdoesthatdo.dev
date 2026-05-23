@@ -9,52 +9,8 @@ import ProfilePhoto from "@/components/ui/profilePhoto.astro";
 import ProjectCard from "@/components/ui/projectCard.astro";
 
 import { Button } from "@/components/ui/button";
-import { Link } from "@/components/ui/link";
 
-const projects = [
-	{
-		title: "Wildlife & Woolly Art",
-		desc: "I setup the shop and website for a Suffolk artist.",
-		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
-		link: "https://wildlifeandwoollyart.co.uk",
-		article: "/projects/wildlifeandwoollyart"
-	},
-	{
-		title: "Wildlife & Woolly Art",
-		desc: "I setup the shop and website for a Suffolk artist.",
-		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
-		link: "https://wildlifeandwoollyart.co.uk",
-		article: "/projects/wildlifeandwoollyart"
-	},
-	{
-		title: "Wildlife & Woolly Art",
-		desc: "I setup the shop and website for a Suffolk artist.",
-		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
-		link: "https://wildlifeandwoollyart.co.uk",
-		article: "/projects/wildlifeandwoollyart"
-	},
-	{
-		title: "Wildlife & Woolly Art",
-		desc: "I setup the shop and website for a Suffolk artist.",
-		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
-		link: "https://wildlifeandwoollyart.co.uk",
-		article: "/projects/wildlifeandwoollyart"
-	},
-	{
-		title: "Wildlife & Woolly Art",
-		desc: "I setup the shop and website for a Suffolk artist.",
-		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
-		link: "https://wildlifeandwoollyart.co.uk",
-		article: "/projects/wildlifeandwoollyart"
-	},
-	{
-		title: "Wildlife & Woolly Art",
-		desc: "I setup the shop and website for a Suffolk artist.",
-		coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp",
-		link: "https://wildlifeandwoollyart.co.uk",
-		article: "/projects/wildlifeandwoollyart"
-	}
-]
+const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}))
 ---
 
 <MainLayout>
@@ -97,7 +53,7 @@ const projects = [
 	</GradientSection>
 
 	<div class="w-full bg-[#0d0730] text-white py-8">
-		<h1 class="font-display text-center text-white">My Projects</h1>
+		<h1 class="font-display text-center">My Projects</h1>
 		<p class="text-center pt-2">Take a look at the projects and work I've completed!</p>
 		<div class="mx-2 md:mx-10 my-5">
 			<div class="flex">
@@ -110,13 +66,13 @@ const projects = [
 				</div>
 
 				<div id="project-gallery" class="flex overflow-y-scroll scrollbar-hide gap-1 scroll-smooth fade-x-4" data-proj-gallery>
-					{projects.map((project) => (
+					{projects.map((project: any) => (
 						<ProjectCard
-							title={project.title}
-							desc={project.desc}
-							coverImage={project.coverImage}
-							link={project.link}
-							article={project.article}>
+							title={project.frontmatter.title}
+							desc={project.frontmatter.desc}
+							coverImage={project.frontmatter.coverImage}
+							link={project.frontmatter.link}
+							article={project.url}>
 						</ProjectCard>
 					))}
 				</div>
