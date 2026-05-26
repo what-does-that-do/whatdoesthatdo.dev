@@ -6,6 +6,9 @@ import GradientSection from '@/components/ui/gradientSection.astro';
 import ProjectCardHorizontal from '@/components/ui/projectCardHorizontal.astro';
 
 const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}))
+
+// TODO: Add language badges as well as dates and locations,
+// properly style project pages (maybe with prose)?
 ---
 <MainLayout>
     <GradientSection className="dark h-[175px] pt-22 p-2 lg:px-10 overflow-hidden text-white">

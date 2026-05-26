@@ -10,9 +10,9 @@
 @plugin "tailwindcss-animate";
 @plugin "tailwindcss-react-aria-components";
 @plugin "@eioluseyi/tailwind-fade";
+@plugin '@tailwindcss/typography';
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *, .dark-mode, .dark-mode *, .dark, .dark *));
 @custom-variant label (& [data-label]);
 @custom-variant focus-input-within (&:has(input:focus));
 
@@ -86,23 +86,28 @@ html {
 }
 
 body {
-    @apply h-full bg-blue-900 font-sans mt-0 text-text-light dark:text-text-dark;
+    @apply h-full font-sans mt-0 bg-background text-foreground text-text-light dark:text-text-dark;
+    color-scheme: dark;
 }
 
 h1 {
-    @apply text-4xl font-bold  duration-500 cursor-default;
+    @apply text-4xl font-bold duration-500 cursor-default;
+}
+
+.btn {
+    @apply font-link text-2xl p-5
 }
 
 @theme {
     --font-display: "Lexend Deca", sans-serif;
     --font-link: "VT323", monospace;
 
-    --color-text-light: black;
+    --color-text-light: white;
     --color-text-dark: white;
 
     --color-primary: #155DFC;
-    --color-bg-light: #8EC5FF;
-    --color-bg-dark: #1C398E;
+    --color-bg-light: #182347;
+    --color-bg-dark: #182347;
 }
 
 @keyframes slide-up {
@@ -115,8 +120,8 @@ h1 {
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.148 0.004 228.8);
+    --background: #182347;
+    --foreground: oklch(0.488 0.243 264.376);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.148 0.004 228.8);
     --popover: oklch(1 0 0);

@@ -1,4 +1,6 @@
 ---
+layout: ../../layouts/articleLayout.astro
+
 title: "Wildlife & Woolly Art"
 desc: "I setup the shop and website for a Suffolk artist."
 coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp"
