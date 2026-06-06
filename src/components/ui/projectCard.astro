@@ -5,17 +5,20 @@ import { buttonVariants } from "@/components/ui/button"
 import {
   Card,
   CardAction,
+  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import LanguageBadges from "./languageBadges.astro";
 
 const coverImage = Astro.props.coverImage;
 const title = Astro.props.title;
 const desc = Astro.props.desc;
 const link = Astro.props.link;
 const article = Astro.props.article;
+const languages = Astro.props.languages;
 ---
 
 <Card className="dark relative mx-auto w-full min-w-[300px] max-w-sm pt-0 shadow z-10">
@@ -29,6 +32,10 @@ const article = Astro.props.article;
     <CardTitle>{title}</CardTitle>
     <CardDescription>{desc}</CardDescription>
   </CardHeader>
+  <CardContent>
+    <LanguageBadges languages={languages} />
+  </CardContent>
+  <div class="grow"></div>
   <CardFooter>
     <div class="flex w-full">
         <a

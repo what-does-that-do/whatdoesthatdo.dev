@@ -4,6 +4,7 @@ import MainLayout from './mainLayout.astro';
 import GradientSection from '@/components/ui/gradientSection.astro';
 import MediaBox from '@/components/ui/mediaBox.astro';
 import Prose from './Prose.astro';
+import LanguageBadges from '@/components/ui/languageBadges.astro';
 
 import { buttonVariants } from '@/components/ui/button';
 
@@ -15,7 +16,7 @@ const { frontmatter } = Astro.props;
 <MainLayout title={frontmatter.title + " - whatdoesthatdo.dev"}>
     <GradientSection className="pt-20">
         <div class="flex flex-col md:flex-row">
-            <div class="order-3 md:order-1 grow flex flex-col w-full text-white text-center">
+            <div class="order-2 md:order-1 grow flex flex-col w-full text-white text-center">
                 <div class="hidden md:block">
                     <a
                         href="/projects"
@@ -28,6 +29,7 @@ const { frontmatter } = Astro.props;
                 <div>
                     <h1 class="font-display ">{frontmatter.title}</h1>
                     <p>{frontmatter.desc}</p>
+                    <LanguageBadges languages={frontmatter.languages} />
                     <a
                         href={frontmatter.link}
                         target="_blank"
@@ -37,16 +39,15 @@ const { frontmatter } = Astro.props;
                     </a>
                 </div>
             </div>
-            <MediaBox className="order-2 shrink justify-self-center max-h-[480px] justify-center">
+            <MediaBox className="order-1 md:order-2 shrink justify-self-center max-h-[480px] justify-center">
                 <img src={frontmatter.coverImage} class="object-contain max-h-full w-full">
             </MediaBox>
-            <div class="order-1 md:order-3grow"></div>
         </div>
     </GradientSection>
 
     <div class="flex">
         <div class="grow"></div>
-        <div class="dark w-full max-w-[1200px] mx-2 pt-2">
+        <div class="dark mx-2 pt-2">
             <Prose>
                 <slot />
             </Prose>

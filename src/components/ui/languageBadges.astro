@@ -1,0 +1,30 @@
+---
+import "@/styles/global.css";
+import { Badge } from "@/components/ui/badge"
+import { IconBrandAstro, IconBrandNodejs, IconBrandPython } from "@tabler/icons-react";
+
+const badgeColour = {
+  Python: "bg-yellow-800",
+  Astro: "bg-purple-800",
+  Node: "bg-green-800"
+} as const;
+
+const badgeMap = {
+  Python: IconBrandPython,
+  Astro: IconBrandAstro,
+  Node: IconBrandNodejs,
+} as const;
+
+const languages = Astro.props.languages as Array<keyof typeof badgeMap>;
+
+---
+
+<div class="pt-1">{languages.map((language: string) => {
+    const Icon = badgeMap[language];
+    return (
+        <Badge className={badgeColour[language] ? badgeColour[language] + " mr-1" : "mr-1"}>
+        {Icon ? <Icon /> : null}
+        {language}
+        </Badge>
+    );
+})}</div>

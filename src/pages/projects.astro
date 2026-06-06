@@ -4,6 +4,7 @@ import '@/styles/global.css';
 import MainLayout from "@/layouts/mainLayout.astro";
 import GradientSection from '@/components/ui/gradientSection.astro';
 import ProjectCardHorizontal from '@/components/ui/projectCardHorizontal.astro';
+import ProjectCard from '@/components/ui/projectCard.astro';
 
 const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}))
 
@@ -12,19 +13,22 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 ---
 <MainLayout>
     <GradientSection className="dark h-[175px] pt-22 p-2 lg:px-10 overflow-hidden text-white">
-        <h1 class="font-display text-center">My Projects.</h1>
+        <h1 class="font-display text-center">My Projects</h1>
         <p class="text-center pt-2">Please take a look at a few of my projects below!</p>
     </GradientSection>
     
     <div class="px-2 md:px-10 dark">
-        {projects.map((project: any) => (
-            <ProjectCardHorizontal
-                title={project.frontmatter.title}
-                desc={project.frontmatter.desc}
-                coverImage={project.frontmatter.coverImage}
-                link={project.frontmatter.link}
-                article={project.url}>
-            </ProjectCardHorizontal>
-        ))}
+        <div>
+            {projects.map((project: any) => (
+                <ProjectCardHorizontal
+                    title={project.frontmatter.title}
+                    desc={project.frontmatter.desc}
+                    coverImage={project.frontmatter.coverImage}
+                    link={project.frontmatter.link}
+                    article={project.url}
+                    languages={project.frontmatter.languages}>
+                </ProjectCardHorizontal>
+            ))}
+        </div>
     </div>
 </MainLayout>

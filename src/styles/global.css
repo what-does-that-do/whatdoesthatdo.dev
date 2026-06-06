@@ -86,7 +86,7 @@ html {
 }
 
 body {
-    @apply h-full font-sans mt-0 bg-background text-foreground text-text-light dark:text-text-dark;
+    @apply h-full font-sans mt-0 bg-background text-text-light dark:text-text-dark;
     color-scheme: dark;
 }
 
@@ -94,8 +94,12 @@ h1 {
     @apply text-4xl font-bold duration-500 cursor-default;
 }
 
+p {
+    @apply leading-5;
+}
+
 .btn {
-    @apply font-link text-2xl p-5
+    @apply font-link text-2xl p-5;
 }
 
 @theme {

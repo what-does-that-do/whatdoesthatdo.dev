@@ -30,7 +30,7 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 
 					<div>
 						<h1 class="hidden md:block font-display text-white md:pt-1">Hi, I'm</h1>
-						<p class="hidden md:block font-display text-5xl text-white">Oliver</p>
+						<p class="hidden md:block font-display text-5xl text-white pt-3">Oliver</p>
 					</div>
 				</div>
 				
@@ -72,7 +72,8 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 							desc={project.frontmatter.desc}
 							coverImage={project.frontmatter.coverImage}
 							link={project.frontmatter.link}
-							article={project.url}>
+							article={project.url}
+							languages={project.frontmatter.languages}>
 						</ProjectCard>
 					))}
 				</div>
