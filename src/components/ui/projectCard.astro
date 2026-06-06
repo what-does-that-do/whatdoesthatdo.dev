@@ -21,12 +21,12 @@ const article = Astro.props.article;
 const languages = Astro.props.languages;
 ---
 
-<Card className="dark relative mx-auto w-full min-w-[300px] max-w-sm pt-0 shadow z-10">
-  <div class="absolute inset-0 z-30 aspect-video bg-black/35"></div>
+<Card className="dark relative mx-auto w-full min-w-[300px] max-w-sm pt-0 shadow">
+  <div class="absolute inset-0 aspect-video bg-black/35"></div>
   <img
     src={coverImage}
     alt={title}
-    class="relative z-20 aspect-video w-full object-cover"
+    class="relative aspect-video w-full object-cover"
   />
   <CardHeader>
     <CardTitle>{title}</CardTitle>

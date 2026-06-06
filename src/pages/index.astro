@@ -19,6 +19,7 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 			<div>
 				<div class="flex">
 					<ProfilePhoto src="https://avatars.githubusercontent.com/u/147245351?s=96" size="96" className="mr-2"></ProfilePhoto>
+					<!-- MOBILE VIEW -->
 					<div class="md:hidden">
 						<div class="flex flex-row items-start gap-3">
 							<h1 class="font-display text-2xl sm:text-3xl text-white pt-1">Hi, I'm</h1>
@@ -28,21 +29,20 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
 					</div>
 
+					<!-- DESKTOP VIEW -->
 					<div>
 						<h1 class="hidden md:block font-display text-white md:pt-1">Hi, I'm</h1>
 						<p class="hidden md:block font-display text-5xl text-white pt-3">Oliver</p>
 					</div>
 				</div>
 				
-				
+				<!-- DESKTOP VIEW -->
 				<div class="hidden md:block md:grid grid-cols-1 md:grid-cols-2 grid-cols-row-1 md:grid-row-2 gap-5 overflow-hidden">
 					<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Science student</p>
 					<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
 				</div>
 			</div>
 		</div>
-
-		<div class="order-2 hidden xl:block xl:grow"></div>
 
 		<div class="order-1 md:order-3 justify-self-end grow flex-col-reverse">
 			<MediaBox className="h-[360px] md:h-[480px] w-[640px] justify-self-center">

@@ -1,0 +1,38 @@
+---
+import "@/styles/global.css"
+import HeaderLink from "./headerLink.astro"
+import { IconPointer, IconMail, IconBrandAstro, IconBrandTabler, IconBrandTailwind, IconBrandGithub, IconBrandLinkedin, IconExternalLink } from "@tabler/icons-react"
+---
+
+<div class="bg-slate-900">
+    <h1 class="font-display text-2xl sm:text-3xl text-white pt-5 pb-2 text-center">You've reached the end...</h1>
+    <div class="flex md:flex-row flex-col">
+        <div class="flex flex-col items-center w-full text-center md:px-10">
+            <h2 class="font-display text-2xl">Oliver Corrigan</h2>
+            <a class="text-muted-foreground inline-link" href="https://github.com/what-does-that-do/">@what-does-that-do</a>
+            <p class="text-muted-foreground pt-2">Thank you for visiting!</p>
+            <p class="text-muted-foreground pt-2">I built this website from scratch using <a class="inline-link" href="https://astro.build/" target="_blank"><IconBrandAstro className="inline" />Astro</a>, <a class="inline-link" href="https://tailwindcss.com/" target="_blank"><IconBrandTailwind className="inline" />Tailwind CSS</a>, <a href="https://ui.shadcn.com/" class="inline-link"><IconPointer className="inline" />Shadcn UI components</a> and <a href="https://tabler.io/icons" target="_blank" class="inline-link"><IconBrandTabler className="inline" />Tabler Icons</a>.</p>
+            <p class="text-muted-foreground pt-2"> Why not take a look at the <a href="https://github.com/what-does-that-do/whatdoesthatdo.dev" class="inline-link" target="_blank"><IconExternalLink className="inline" />source code</a>?</p>
+        </div>
+        <div class="md:flex md:flex-col grid grid-flow-col-dense grid-rows-2 items-center w-full overflow-hidden">
+            <HeaderLink>Home</HeaderLink>
+            <HeaderLink>About</HeaderLink>
+            <HeaderLink>Projects</HeaderLink>
+            <HeaderLink>Contact</HeaderLink>
+            <HeaderLink>Sitemap</HeaderLink>
+        </div>
+    </div>
+    <div class="pt-5 pb-10 flex flex-row items-center gap-0.5">
+        <div class="grow" />
+        <HeaderLink href="https://github.com/what-does-that-do/" isIconButton={true}>
+            <IconBrandGithub className='w-[36px] h-[36px]' />
+        </HeaderLink>
+        <HeaderLink href="https://linkedin.com/in/ocorrigan/" isIconButton={true}>
+            <IconBrandLinkedin className='w-[36px] h-[36px]' />
+        </HeaderLink>
+        <HeaderLink href="/contact#email" isIconButton={true}>
+            <IconMail className='w-[36px] h-[36px]' />
+        </HeaderLink>
+        <div class="grow" />
+    </div>
+</div>

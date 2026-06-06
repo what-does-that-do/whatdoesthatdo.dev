@@ -6,12 +6,12 @@ import MobileNav from './mobileNav.astro';
 import { IconBrandGithub, IconBrandLinkedin, IconMail, IconMenu2 } from '@tabler/icons-react';
 import { IconChevronUp } from '@tabler/icons-react';
 ---
-<div class="fixed top-0 left-0 py-2 bg-transparent w-full pl-2 pr-2">
+<div class="fixed top-0 left-0 py-2 bg-transparent w-full pl-2 pr-2 z-50">
     <div class="w-full h-16 flex bg-bg-light/60 dark:bg-bg-dark/60 rounded-2xl p-3 backdrop-blur-md">
         <div class="opacity-100 flex items-center justify-between w-full">
             <div class="flex items-center">
-                <img src="https://avatars.githubusercontent.com/u/147245351?s=96" alt="what-does-that-do" class="w-12 h-12 rounded-full mr-4 pointer" />
-                <h1 class="font-display">Oli</h1>
+                <img src="https://avatars.githubusercontent.com/u/147245351?s=96" alt="what-does-that-do" class="w-12 h-12 rounded-full mr-4 pointer" onclick="goHome()" />
+                <h1 class="font-display" onclick="goHome()">Oliver</h1>
             </div>
             <div class="md:block hidden">
                 <HeaderLink href="/">Home</HeaderLink>
@@ -26,7 +26,7 @@ import { IconChevronUp } from '@tabler/icons-react';
                 <HeaderLink href="https://linkedin.com/in/ocorrigan/" isIconButton={true}>
                     <IconBrandLinkedin className='w-[36px] h-[36px]' />
                 </HeaderLink>
-                <HeaderLink href="/contact" isIconButton={true}>
+                <HeaderLink href="/contact#email" isIconButton={true}>
                     <IconMail className='w-[36px] h-[36px]' />
                 </HeaderLink>
             </div>
@@ -82,5 +82,9 @@ import { IconChevronUp } from '@tabler/icons-react';
                 mobileNav.classList.add('hidden');
             }, 300);
         }
+    }
+
+    window.goHome = function() {
+        window.location.href = "/";
     }
 </script>

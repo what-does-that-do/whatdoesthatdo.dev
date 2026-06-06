@@ -102,6 +102,10 @@ p {
     @apply font-link text-2xl p-5;
 }
 
+.inline-link {
+    @apply hover:underline cursor-pointer;
+}
+
 @theme {
     --font-display: "Lexend Deca", sans-serif;
     --font-link: "VT323", monospace;
