@@ -39,15 +39,13 @@ const { frontmatter } = Astro.props;
                     </a>
                 </div>
             </div>
-            <MediaBox className="order-1 md:order-2 shrink justify-self-center max-h-[480px] justify-center">
-                <img src={frontmatter.coverImage} class="object-contain max-h-full w-full">
-            </MediaBox>
+            <img src={frontmatter.coverImage} class="order-1 md:order-2 shrink rounded-2xl shadow-lg overflow-hidden md:max-w-1/2 max-h-full w-full">
         </div>
     </GradientSection>
 
     <div class="flex">
         <div class="grow"></div>
-        <div class="dark mx-2 pt-2">
+        <div class="dark mx-2 pt-5">
             <Prose>
                 <slot />
             </Prose>

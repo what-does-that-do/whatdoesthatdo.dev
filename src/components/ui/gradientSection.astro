@@ -2,7 +2,9 @@
 import '@/styles/global.css'
 
 const className = Astro.props.className || "";
+const colour = Astro.props.colour || "blue";
+const pageTop = Astro.props.pageTop || true;
 ---
-<div id="gradient" class={`pt-20 p-2 lg:px-10 overflow-hidden bg-gradient-to-tr from-blue-800 to-blue-600 w-full m-0 ${className}`}>
+<div id="gradient" class={`${pageTop == true ? "pt-20": "pt-5"} p-2 lg:px-10 overflow-hidden bg-gradient-to-tr ${colour == "blue" ? "from-blue-800 to-blue-600": "from-green-800 to-green-600"} w-full m-0 ${className}`}>
     <slot></slot>
 </div>
