@@ -1,5 +1,8 @@
 ---
 import { IconMapPin, IconBriefcase, IconArrowNarrowUp, IconArrowNarrowRight, IconArrowNarrowLeft } from "@tabler/icons-react";
+
+import { IconBrandPython, IconBrandCSharp, IconBrandAstro, IconBrandNodejs, IconBrandReactNative, IconFileTypeSql, IconFileTypeHtml, IconFileTypeCss, IconBrandJavascript } from "@tabler/icons-react";
+
 import MainLayout from "@/layouts/mainLayout.astro";
 import '@/styles/global.css';
 
@@ -105,14 +108,65 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 		</div>
 	</div>
 
+	<GradientSection pageTop="0" className="w-full py-5" colour="blue">
+		<h1 class="font-display text-center">Programming Languages</h1>
+		<p class="text-center pt-2">Here are a few languages (and frameworks) I've worked with.</p>
+
+		<div class="pt-2">
+			<p class="shrink text-center text-xl">
+				<IconBrandPython className="inline size-10" />
+				<IconBrandCSharp className="inline size-10" />
+				<IconBrandAstro className="inline size-10" />
+				<IconBrandNodejs className="inline size-10" />
+				<IconBrandReactNative className="inline size-10" />
+				<IconFileTypeSql className="inline size-10" />
+				<IconFileTypeHtml className="inline size-10" />
+				<IconFileTypeCss className="inline size-10" />
+				<IconBrandJavascript className="inline size-10" />
+			</p>
+		</div>
+	</GradientSection>
+
 	<GradientSection pageTop="0" className="w-full" colour="green">
 		<h1 id="about" class="font-display text-center">About Me</h1>
+
 		<div class="flex flex-col md:flex-row">
-			<div class="grow pr-2">
-				<h2 class="font-display text-2xl font-bold">Title</h2>
-				<p>Lorem</p>
+			<div class="grow flex flex-col md:pr-5">
+				<div class="grow" />
+
+				<h2 class="font-display text-2xl font-bold">Hello...</h2>
+				<p>Hi, I’m Oliver Corrigan, a Computer Science student currently studying (graduating in 2030) a BSc Computer Science with a year in industry at the <a class="inline-link" href="https://www.uea.ac.uk/" target="_blank">University of East Anglia</a>.</p>
+				<p><br>I am always looking for opportunities to grow my experience and career! Currently, I am exploring my interest with agritech/robots - but I'm open to everything!</p>
+
+				<div class="grow" />
 			</div>
-			<img class="shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-1/3" src="https://picsum.photos/1200/800">
+			<img class="shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-2/5" src="https://picsum.photos/1200/800">
+		</div>
+
+		<div class="flex flex-col md:flex-row mt-5">
+			<img class="shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-2/5" src="https://picsum.photos/1200/800">
+			<div class="grow flex flex-col pl-5">
+				<div class="grow" />
+
+				<h2 class="font-display text-2xl font-bold">Background</h2>
+				<p>I am passionate about creating projects that solve real world problems. I enjoy doing this with software, electronics, or a mix of both!</p>
+				<p><br>Over the last few years, I have learnt a variety of programming languages and techniques, along with a variety of hardware skills including soldering, circuit design, and 3D CAD modelling and printing. This experience has been gained through a variety of my own projects, alongside being robotics team leader for Hills Road in 2023-2025.</p>
+				<p><br>Further information about my past experience can be found on my <a class="inline-link" href="https://www.linkedin.com/in/ocorrigan/" target="_blank">LinkedIn profile</a>.</p>
+
+				<div class="grow" />
+			</div>
+		</div>
+
+		<div class="flex flex-col md:flex-row mt-5">
+			<div class="grow flex flex-col md:pr-5">
+				<div class="grow" />
+
+				<h2 class="font-display text-2xl font-bold">Outside of Tech</h2>
+				<p>In my spare time, you can often find me playing violin (particularly folk music!), going bouldering, or supporting wildlife conservation projects and charities, including the <a class="inline-link" href="https://www.suffolkhedgehoghospital.com/" target="_blank">Suffolk Hedgehog Hospital</a> (my inspiration AI wildlife detection app!)</p>
+
+				<div class="grow" />
+			</div>
+			<img class="shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-2/5" src="https://picsum.photos/1200/800">
 		</div>
 	</GradientSection>
 
