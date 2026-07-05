@@ -18,7 +18,9 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 
 <MainLayout>
 	<GradientSection className="h-[600px] flex flex-col md:flex-row">
-		<div class="order-3 md:order-1 flex flex-col-reverse h-full">
+		<div class="order-3 md:order-1 flex flex-col h-full">
+			<h1 class="font-display text-white text-lg md:max-w-[600px]">An ethusiastic student developer, building full-stack applications solving real problems.</h1>
+			<div class="grow" />
 			<div>
 				<div class="flex">
 					<ProfilePhoto src="https://avatars.githubusercontent.com/u/147245351?s=96" size="96" className="mr-2"></ProfilePhoto>
@@ -54,6 +56,25 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 			<p class="text-white pt-2 text-right">Our team HRS robot at Student Robotics 2024!<IconArrowNarrowUp className="inline"></IconArrowNarrowUp></p>
 		</div>
 	</GradientSection>
+
+	<div class="w-full bg-[#0d0730] text-white py-8">
+		<h1 class="font-display text-center">Experience</h1>
+		<p class="text-center pt-2">Here are a few languages (and frameworks) I have experience with.</p>
+
+		<div class="pt-2">
+			<p class="shrink text-center text-xl">
+				<IconBrandPython className="inline size-10" />
+				<IconBrandCSharp className="inline size-10" />
+				<IconBrandAstro className="inline size-10" />
+				<IconBrandNodejs className="inline size-10" />
+				<IconBrandReactNative className="inline size-10" />
+				<IconFileTypeSql className="inline size-10" />
+				<IconFileTypeHtml className="inline size-10" />
+				<IconFileTypeCss className="inline size-10" />
+				<IconBrandJavascript className="inline size-10" />
+			</p>
+		</div>
+	</div>
 
 	<div class="w-full bg-[#0d0730] text-white py-8">
 		<h1 class="font-display text-center">My Projects</h1>
@@ -107,25 +128,6 @@ const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}
 			<div class="grow" />
 		</div>
 	</div>
-
-	<GradientSection pageTop="0" className="w-full py-5" colour="blue">
-		<h1 class="font-display text-center">Programming Languages</h1>
-		<p class="text-center pt-2">Here are a few languages (and frameworks) I've worked with.</p>
-
-		<div class="pt-2">
-			<p class="shrink text-center text-xl">
-				<IconBrandPython className="inline size-10" />
-				<IconBrandCSharp className="inline size-10" />
-				<IconBrandAstro className="inline size-10" />
-				<IconBrandNodejs className="inline size-10" />
-				<IconBrandReactNative className="inline size-10" />
-				<IconFileTypeSql className="inline size-10" />
-				<IconFileTypeHtml className="inline size-10" />
-				<IconFileTypeCss className="inline size-10" />
-				<IconBrandJavascript className="inline size-10" />
-			</p>
-		</div>
-	</GradientSection>
 
 	<GradientSection pageTop="0" className="w-full" colour="green">
 		<h1 id="about" class="font-display text-center">About Me</h1>
