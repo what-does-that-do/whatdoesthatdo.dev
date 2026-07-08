@@ -9,9 +9,9 @@ languages: ["Python", "C", "Node", "Astro"]
 ---
 ## TL;DR
 
-I thoroughly enjoyed leading the robotics society. I developed my Python skills when building WebSockets for the camera and live log feeds at RoboCon. I also built a new docs and general website for RoboCon from scratch with Astro and NodeJS, both of these are still live (see [docs website](https://docs.robocon.uk/) and [main RC website](https://robocon.uk/)). Competing at Student Robotics was a massive highlight too, as I thrived at solving problems under the competition pressure. We even got to the semi-finals at SR in the second year!
+I thoroughly enjoyed leading the robotics society. In building the new kit software, I implemented WebSockets for the camera and live log feeds at RoboCon instead of HTTP polling. I also built a new docs and general website for RoboCon from scratch with Astro and NodeJS, both of these are still live (see [docs website](https://docs.robocon.uk/) and [main RC website](https://robocon.uk/)). Competing at Student Robotics was a massive highlight too, as I thrived at solving problems under the competition pressure. We even got to the semi-finals at SR in the second year!
 
-I have gained experience in teamwork, communication, public speaking, problem solving, and project management. 
+I have gained extensive experience in teamwork, communication, public speaking, problem solving, and project management.
 
 If you're interested in learning more about my time at robotics, please do read about it below, I can talk about it for hours!
 
@@ -37,27 +37,12 @@ Overall, the robot competition was successful in both the years I ran them, and 
 I was responsible for running the competition, and I worked with our team planning the game, building the hardware and software to run the robot kit, running welcome "kick off" events and the competition days.
 
 ### Favourite roles
-During my time at RoboCon, I redesigned the main website and docs website to accompany the kit we built and lent out to participating secondary school teams. I was also involved in writing improved documentation for the new robot brains to explain how they worked and how schools can program them. I ran in-person and online 1:1 sessions with the secondary school teams to help fix bugs and provide support. I thoroughly enjoyed teaching the students Python!
+During my time at RoboCon, I redesigned the main website and docs website to accompany the kit we built and lent out to participating secondary school teams. I was also involved in writing improved documentation for the new robot brains to explain how they worked and how schools can program them. I ran in-person and online 1:1 sessions with the secondary school teams to help fix bugs and provide support. I thoroughly enjoyed teaching the students to code!
 
 As well as general bug fixing throughout the development of the new kit, I built a WebSocket system to display the live robot camera view and logs onto screens at the competition in as close to real time as possible. This replaced the previous HTTP polling method, which was slow and resource intensive for a small Pi Zero!
 
 ### The Competition
-At the competition itself, I ensured everyone worked together to run the competition, delegated roles, and supported the secondary school students with their robots. I also encouraged the teams by commentating on the rounds, and I setup a sound system that linked audio between the practice arena and the main arena.
+At the competition itself, I ensured everyone worked together to run the competition, delegated roles, and supported the secondary school students with their robots. I also encouraged the teams by commentating on the rounds, and I setup a wireless sound system that linked audio between the practice arena and the main arena.
 
 I still volunteer at this competition every year to help the current students, and I really enjoy seeing how teams have conquered the competition differently every year!
 
-## Student Robotics
-
-> [Student Robotics](https://studentrobotics.org/) is a competition run by the University of Southampton for sixth form students. The challenge is to build an autonomous robot from scratch to compete in their 2 day competition, against other robots, to win a logical game.
-
-### Year 1: Final Frontier
-
-Info about Y1 robot...
-
-### Year 2: Urban Heights
-
-Info about Y2 robot...
-
-### Old change this
-
-We built a robot to compete in a similar competition. I was involved in building the robot hardware and software, I I also learned many skills including how to 3D design, and how to debug electronic circuit boards. I also developed my programming skills massively, as I was faced with a variety of different challenges to work around and fix under the time pressure of the competition!

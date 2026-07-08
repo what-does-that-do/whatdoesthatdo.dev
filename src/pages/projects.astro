@@ -6,7 +6,7 @@ import GradientSection from '@/components/ui/gradientSection.astro';
 import ProjectCardHorizontal from '@/components/ui/projectCardHorizontal.astro';
 import ProjectCard from '@/components/ui/projectCard.astro';
 
-const projects = Object.values(import.meta.glob("./projects/*.md", {eager: true}))
+const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/*.mdx"], {eager: true}))
 
 // TODO: Add language badges as well as dates and locations,
 // properly style project pages (maybe with prose)?
