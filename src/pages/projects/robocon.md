@@ -3,18 +3,19 @@ layout: ../../layouts/articleLayout.astro
 
 title: "Leading RoboCon"
 desc: "My time as leader of the Hills Road robotics society running the RoboCon competiton."
-coverImage: "https://picsum.photos/600/400"
+coverImage: "https://robocon.uk/images/news/Review2025/IMG_8498.JPG"
 link: "https://robocon.uk/news/robocon-2025-review/"
 languages: ["Python", "C", "Node", "Astro"]
 ---
-
-## My involvement
 
 > RoboCon is a competition, run by Hills Road students, for local secondary schools. Each school gets 6 months to build an autonomous robot using a loaned kit (developed by Hills Road students), to go head-to-head during a competitive game to score the most points. For more info, visit the [RoboCon website](https://robocon.uk/)!
 
 I was selected as staff to become leader of the HRSFC Robotics Society in Janurary 2024, I remained as leader until I left in summer 2025.
 
-I was responsible for:
+## My responsibilities
+
+As leader I was responsible for:
+
 - Ensuring the competition ran smoothly, running competition and kick-off event days.
 - Liaising with staff and students at secondary schools, offering support over video calls, in-person events and emails.
 - Delegating tasks between my team, and planning out tasks to ensure we were prepared for the competition.
@@ -45,7 +46,7 @@ I still volunteer at this competition every year to help the current students, a
 The below have been published about the competitions I was involved with running.
 
 - **Hills Road Sixth Form Article for 2025**: "[RoboCon 2025 is a 'flaming' success](https://www.hillsroad.ac.uk/latest-news/robocon-2025)"
-- **RoboCon Official Write-Ups**: "[RoboCon 2024 in review](https://robocon.uk/news/robocon-2024-review/)" and "[RoboCon 2025 in review](https://robocon.uk/news/robocon-2025-review/)"
+- **RoboCon Official Articles**: "[RoboCon 2024 in review](https://robocon.uk/news/robocon-2024-review/)" and "[RoboCon 2025 in review](https://robocon.uk/news/robocon-2025-review/)"
 
 ### About the Robotics Society
 
