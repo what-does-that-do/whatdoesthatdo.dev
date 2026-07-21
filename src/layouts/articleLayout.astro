@@ -30,13 +30,14 @@ const { frontmatter } = Astro.props;
                     <h1 class="font-display ">{frontmatter.title}</h1>
                     <p>{frontmatter.desc}</p>
                     <LanguageBadges languages={frontmatter.languages} />
+                    { frontmatter.openButton != "hidden" &&
                     <a
                         href={frontmatter.link}
                         target="_blank"
                         class={buttonVariants({ variant: "outline" }) + " bg-transparent btn border-1 border-white mt-2"}
                     >
-                        <IconExternalLink stroke={2} /> View Live
-                    </a>
+                        <IconExternalLink stroke={2} /> { frontmatter.openButton || "View" }
+                    </a>}
                 </div>
             </div>
             <img src={frontmatter.coverImage} class="order-1 md:order-2 shrink rounded-2xl shadow-lg overflow-hidden md:max-w-1/2 max-h-full w-full">

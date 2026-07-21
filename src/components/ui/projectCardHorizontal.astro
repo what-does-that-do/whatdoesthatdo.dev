@@ -23,7 +23,7 @@ const desc = Astro.props.desc;
 const link = Astro.props.link;
 const article = Astro.props.article;
 const languages = Astro.props.languages;
-
+const openButton = Astro.props.openButton || "View";
 ---
 
 <Card className="dark relative mx-auto max-w-[800px] pt-0 shadow flex flex-row pb-0 my-3">
@@ -46,12 +46,15 @@ const languages = Astro.props.languages;
       </CardContent>
       <CardFooter className="pb-2">
         <div class="flex w-full pt-2">
+            { openButton != "hidden" &&
             <a
               href={link}
               class={"grow btn " + buttonVariants({ })}
             >
-              View
+              { openButton }
             </a>
+            }
+            
             <a
               href={article}
               class={"grow btn " + buttonVariants({ variant: "outline" })}

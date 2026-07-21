@@ -26,7 +26,8 @@ const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/
                     coverImage={project.frontmatter.coverImage}
                     link={project.frontmatter.link}
                     article={project.url}
-                    languages={project.frontmatter.languages}>
+                    languages={project.frontmatter.languages}
+                    openButton={project.frontmatter.openButton}>
                 </ProjectCardHorizontal>
             ))}
         </div>

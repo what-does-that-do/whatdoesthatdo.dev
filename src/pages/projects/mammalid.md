@@ -3,13 +3,16 @@ layout: ../../layouts/articleLayout.astro
 
 title: "Mammal ID"
 desc: "Software that detects mammals present in camera trap footage with ML. (In development)."
-coverImage: "/project_images/sr/robot_1.webp"
+coverImage: "/project_images/mammalid/angel.webp"
 link: "https://example.com/"
 languages: ["Python", "ObjectDetection", "AI", "SQL", "Electron"]
+openButton: "hidden"
 ---
 As part of a multi-year project, I have built software able to detect British mammals present in camera trap footage.
 
 This started as part of my EPQ, where I built a Pi Zero camera able to detect hedgehogs live. However, it has since evolved into a personal project with a standalone Electron application, capable of detecting multiple different mammals.
+
+The hedgehog in the photo is Angel, a hedgehog I looked after while volunteering at the Suffolk Hedgehog Hospital. It has been successfully identified by the model as a hedgehog.
 
 ## Tech Stack
 

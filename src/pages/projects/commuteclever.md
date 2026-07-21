@@ -3,9 +3,10 @@ layout: ../../layouts/articleLayout.astro
 
 title: "CommuteClever Webapp"
 desc: "A transport app with live data feeds, route planning, delay predictions and SMS notifications."
-coverImage: "/project_images/sr/robot_1.webp"
-link: "https://robocon.uk/news/robocon-2025-review/"
+coverImage: "/project_images/commuteclever/main_screenshot.webp"
+link: "https://github.com/what-does-that-do/CommuteClever"
 languages: ["Python", "SQL", "Flask"]
+openButton: "GitHub Repo"
 ---
 
 ## The Problem

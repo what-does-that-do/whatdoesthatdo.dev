@@ -6,6 +6,7 @@ desc: "My time as leader of the Hills Road robotics society running the RoboCon 
 coverImage: "https://robocon.uk/images/news/Review2025/IMG_8498.JPG"
 link: "https://robocon.uk/news/robocon-2025-review/"
 languages: ["Python", "C", "Node", "Astro"]
+openButton: "Website"
 ---
 
 > RoboCon is a competition, run by Hills Road students, for local secondary schools. Each school gets 6 months to build an autonomous robot using a loaned kit (developed by Hills Road students), to go head-to-head during a competitive game to score the most points. For more info, visit the [RoboCon website](https://robocon.uk/)!
