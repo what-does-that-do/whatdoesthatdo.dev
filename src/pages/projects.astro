@@ -6,6 +6,8 @@ import GradientSection from '@/components/ui/gradientSection.astro';
 import ProjectCardHorizontal from '@/components/ui/projectCardHorizontal.astro';
 import ProjectCard from '@/components/ui/projectCard.astro';
 
+import { IconShovel } from '@tabler/icons-react';
+
 const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/*.mdx"], {eager: true}))
 
 // TODO: Add language badges as well as dates and locations,
@@ -31,5 +33,15 @@ const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/
                 </ProjectCardHorizontal>
             ))}
         </div>
+    </div>
+    <div class="text-center py-5">
+        <h1 class="text-gray-400 font-display">
+            <IconShovel className="inline" size={64} stroke={2}></IconShovel>
+            <br>
+            That's not all!
+        </h1>
+        <p>I'm working on a few projects that aren't quite finished yet.</p>
+        <p>The documentation is still in progress...</p>
+        <p>Watch this space!</p>
     </div>
 </MainLayout>
