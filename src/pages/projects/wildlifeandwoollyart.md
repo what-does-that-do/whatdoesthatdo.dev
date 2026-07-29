@@ -8,6 +8,12 @@ link: "https://wildlifeandwoollyart.co.uk"
 languages: ["Astro", "Node"]
 openButton: "Visit"
 ---
-# Test Page
+I built a website from scratch for a Suffolk artist, alongside setting up a POS (Point of sale) system via Square and webshop.
 
-Success. You've reached the article.
+## Key responsibilities:
+- **SEO**: Ensuring the site loads quickly and is optimised for search engine queries.
+- **Copyright protection**: Protecting the artwork on the site from AI and thieves by reducing quality and adding watermarks.
+- **Till setup**: Customising and setting the till so it can be used effectively at remote locations.
+- **Stock**: Tracking and ensuring stock could not be double sold!
+
+I have learned the key challenges with building a business online, and the technology behind webshops and card machines. I continue to maintain the systems and website!
