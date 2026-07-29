@@ -7,9 +7,10 @@ import MainLayout from "@/layouts/mainLayout.astro";
 import '@/styles/global.css';
 
 import GradientSection from "@/components/ui/gradientSection.astro";
-import MediaBox from "@/components/ui/mediaBox.astro";
 import ProfilePhoto from "@/components/ui/profilePhoto.astro";
 import ProjectCard from "@/components/ui/projectCard.astro";
+
+import {IndexCarousel} from "@/components/indexCarousel.tsx"
 
 import { Button } from "@/components/ui/button";
 
@@ -19,7 +20,7 @@ const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/
 <MainLayout>
 	<GradientSection className="md:h-[600px] flex flex-col md:flex-row">
 		<div class="order-3 md:order-1 flex flex-col h-full">
-			<h2 class="font-display text-white font-bold text-2xl md:text-4xl md:max-w-[600px]">An enthusiastic student developer, who enjoys building full-stack applications to solve real problems.</h2>
+			<h2 class="font-display text-white font-bold text-2xl pt-2 md:pt-0 md:text-4xl md:max-w-[600px]">An enthusiastic student developer, passionate about building full-stack applications to solve real problems.</h2>
 			<div class="grow" />
 			<div>
 				<div class="flex mt-2">
@@ -49,11 +50,10 @@ const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/
 			</div>
 		</div>
 
-		<div class="order-1 md:order-3 justify-self-end grow flex-col-reverse">
-			<MediaBox className="h-[360px] md:h-[480px] w-[640px] justify-self-center">
-				<iframe class="w-full h-full" src="https://www.youtube.com/embed/CpCC2fTn0os?si=0DEHAeeGAR5nC2ME&start=6955&autoplay=1&controls=0&showinfo=0&autohide=1" title="Twemima Robot" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			</MediaBox>
-			<p class="text-white pt-2 text-right">Our team HRS robot at Student Robotics 2024!<IconArrowNarrowUp className="inline"></IconArrowNarrowUp></p>
+		<div class="order-2 flex grow" />
+
+		<div class="order-1 md:order-3 justify-self-end grow flex md:w-1/2 h-full">
+			<IndexCarousel client:load images={["/project_images/sr/robot_1.webp", "/project_images/sr/debugging_urbanheights.webp", "/project_images/mammalid/angel.webp", "/project_images/sr/robot_2_cube.webp"]} />
 		</div>
 	</GradientSection>
 
