@@ -27,7 +27,7 @@ const openButton = Astro.props.openButton || "View";
 ---
 
 <Card className="dark relative mx-auto max-w-[800px] pt-0 shadow flex flex-row pb-0 my-3">
-  <div class="shrink max-w-1/4 mx-auto">
+  <div class="shrink min-w-[100px] max-w-1/4 mx-auto">
     <img
       src={coverImage}
       alt={title}
@@ -35,16 +35,16 @@ const openButton = Astro.props.openButton || "View";
     />
   </div>
   <div class="grow flex flex-col bg-purple">
-    <div class="grow"></div>
-    <div>
-      <CardHeader className="pt-2">
+    <div class="md:grow"></div>
+    <div class="grow">
+      <CardHeader className="pt-2 pl-0">
         <CardTitle>{title}</CardTitle>
         <CardDescription>{desc}</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pl-0">
           <LanguageBadges languages={languages} />
       </CardContent>
-      <CardFooter className="pb-2">
+      <CardFooter className="pb-2 pl-0">
         <div class="flex w-full pt-2">
             { openButton != "hidden" &&
             <a

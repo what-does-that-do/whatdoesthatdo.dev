@@ -6,7 +6,7 @@ desc: "A transport app with live data feeds, route planning, delay predictions a
 coverImage: "/project_images/commuteclever/main_screenshot.webp"
 link: "https://github.com/what-does-that-do/CommuteClever"
 languages: ["Python", "SQL", "Flask"]
-openButton: "GitHub Repo"
+openButton: "Git Repo"
 ---
 
 ## The Problem
