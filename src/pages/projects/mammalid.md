@@ -14,15 +14,31 @@ This started as part of my EPQ, where I built a Pi Zero camera trap able to dete
 
 The hedgehog in the photo is Angel, a hedgehog I looked after while volunteering at the Suffolk Hedgehog Hospital. She has been successfully identified by the model as a hedgehog!
 
+## Screenshot Previews
+
+![Welcome Screen](/project_images/mammalid/welcome-mid.webp)
+
+The initial welcome screen, allowing the user to select the folder of their camera trap footage and desired GPU.
+
+![Analysing Screen](/project_images/mammalid/loading-mid.webp)
+
+A live loader feeding progress from the backend to the user.
+
+![Analysis Screen](/project_images/mammalid/analysis-mid.webp)
+
+Graphs and line charts (being developed) showing the results, with options to organise exported footage.
+
 ## Tech Stack
 
 - **Backend**: Ultralytics YOLO & Python for all object detection processing, SQL database of file detais and detection information.
 - **Frontend**: Electron UI with React, ShadCN components and Tailwind CSS.
 
+
 ## Skills Gained
 
 - **Machine Learning**: I now have experience building machine learning models from scratch using Ultralytics. I have learnt about how to build datasets for training, and how to implement them successfully. I am looking forward to studying this in greater depth at university.
 - **Electron UI**: Building an intuitive app for users to interact with, masking the complexities of the backend from the user. Additionally, learning the complexities of passing data between backend and frontend without causing hanging or crashes.
+- **UI/UX Design**: Ensuring the app is simple to navigate, and follows a design in keeping with modern OS standards.
 - **Packaging for production**: Overcoming the difficulties of building software able to run on different operating systems and setups, along with the issues of packaging for all required frameworks.
 
 ## Issues faced
