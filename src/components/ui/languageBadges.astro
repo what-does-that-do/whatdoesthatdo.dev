@@ -1,7 +1,7 @@
 ---
 import "@/styles/global.css";
 import { Badge } from "@/components/ui/badge"
-import { IconBrandAstro, IconBrandNodejs, IconBrandPython, IconCameraAi, IconBrandReactNative, IconLetterCSmall, IconAi, IconDatabase  } from "@tabler/icons-react";
+import { IconBrandAstro, IconBrandNodejs, IconBrandPython, IconCameraAi, IconBrandReactNative, IconLetterCSmall, IconAi, IconDatabase, IconWorld } from "@tabler/icons-react";
 
 const badgeColour = {
   Python: "bg-yellow-800",
@@ -22,7 +22,8 @@ const badgeMap = {
   Electron: IconBrandReactNative,
   C: IconLetterCSmall,
   AI: IconAi,
-  SQL: IconDatabase
+  SQL: IconDatabase,
+  Flask: IconWorld
 } as const;
 
 const languages = Astro.props.languages as Array<keyof typeof badgeMap>;
