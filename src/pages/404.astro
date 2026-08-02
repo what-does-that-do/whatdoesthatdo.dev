@@ -1,0 +1,28 @@
+---
+import MainLayout from "@/layouts/mainLayout.astro";
+import '@/styles/global.css';
+
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<MainLayout>
+    <div class="pt-20 text-center pb-10">
+        <h1 class="font-link" style="font-size: 120pt;">404</h1>
+        <h1 class="font-display mt-10 mb-2">Where should this go?</h1>
+        <p class="mt-2">Sorry, this URL doesn't lead to any pages at the moment.</p>
+        <p>If it's a broken link (sorry), please do let me know!</p>
+
+        <a
+            href="/"
+            class={buttonVariants({  }) + " bg-white btn mt-2"}
+        >
+            Return Home
+        </a>
+        <a
+            href="/contact"
+            class={buttonVariants({ variant: 'outline' }) + " white border-white bg-transparent btn mt-2 mx-2"}
+        >
+            Contact Me
+        </a>
+    </div>
+</MainLayout>
