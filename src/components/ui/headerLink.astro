@@ -1,7 +1,7 @@
 ---
 import '@/styles/global.css';
 const { href, isIconButton } = Astro.props;
-const isCurrentPage = !(Astro.url?.pathname === href);
+const isCurrentPage = !(Astro.url?.pathname === href || Astro.url?.pathname == href + "/" );
 ---
 <a
   href={href}

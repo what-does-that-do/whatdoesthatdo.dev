@@ -31,7 +31,7 @@ const currentPage = Astro.url?.pathname;
             <HeaderLink href="/">[{currentPage == "/" ? "*" : " "}] Home</HeaderLink><br>
             <HeaderLink href="/#about">[{currentPage == "/#about" ? "*" : " "}] About</HeaderLink><br>
             <HeaderLink href="/projects">[{currentPage.startsWith("/projects") ? "*" : " "}] Projects</HeaderLink><br>
-            <HeaderLink href="/contact">[{currentPage == "/contact" ? "*" : " "}] Contact</HeaderLink>
+            <HeaderLink href="/contact">[{(currentPage == "/contact" || currentPage == "/contact/") ? "*" : " "}] Contact</HeaderLink>
         </div>
     </div>
 </div>
