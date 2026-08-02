@@ -3,6 +3,8 @@ layout: ../../layouts/articleLayout.astro
 
 title: "CommuteClever Webapp"
 desc: "A transport app with live data feeds, route planning, delay predictions and SMS notifications."
+order: 3
+
 coverImage: "/project_images/commuteclever/main_screenshot.webp"
 link: "https://github.com/what-does-that-do/CommuteClever"
 languages: ["Python", "SQL", "Flask"]

@@ -15,6 +15,7 @@ import {IndexCarousel} from "@/components/indexCarousel.tsx"
 import { Button } from "@/components/ui/button";
 
 const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/*.mdx"], {eager: true}))
+projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
 <MainLayout>

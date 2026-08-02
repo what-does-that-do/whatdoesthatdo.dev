@@ -3,6 +3,8 @@ layout: ../../layouts/articleLayout.astro
 
 title: "Wildlife & Woolly Art"
 desc: "I setup the shop and website for a Suffolk artist."
+order: 5
+
 coverImage: "https://wildlifeandwoollyart.co.uk/images/artwork/painted_hare.webp"
 link: "https://wildlifeandwoollyart.co.uk"
 languages: ["Astro", "Node"]

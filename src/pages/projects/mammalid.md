@@ -3,6 +3,8 @@ layout: ../../layouts/articleLayout.astro
 
 title: "Mammal ID"
 desc: "Software that detects mammals present in camera trap footage with ML. (In development)."
+order: 1
+
 coverImage: "/project_images/mammalid/angel.webp"
 link: "https://example.com/"
 languages: ["Python", "ObjectDetection", "AI", "SQL", "Electron"]

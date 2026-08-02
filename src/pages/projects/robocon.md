@@ -3,6 +3,8 @@ layout: ../../layouts/articleLayout.astro
 
 title: "Leading RoboCon"
 desc: "My time as leader of the Hills Road robotics society running the RoboCon competiton."
+order: 4
+
 coverImage: "https://robocon.uk/images/news/Review2025/IMG_8498.JPG"
 link: "https://robocon.uk/news/robocon-2025-review/"
 languages: ["Python", "C", "Node", "Astro"]

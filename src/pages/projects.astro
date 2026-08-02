@@ -9,6 +9,7 @@ import ProjectCard from '@/components/ui/projectCard.astro';
 import { IconShovel } from '@tabler/icons-react';
 
 const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/*.mdx"], {eager: true}))
+projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 
 // TODO: Add language badges as well as dates and locations,
 // properly style project pages (maybe with prose)?
