@@ -1,9 +1,8 @@
-# The Portfolio
+# whatdoesthatdo.dev
+My little slice 🍕 of the internet to showcase projects, news and things I've been involved with! [Take a look here.](https://whatdoesthatdo.dev/)
 
-The repo for my portfolio website over at [whatdoesthatdo.dev](https://whatdoesthatdo.dev)!
-Still massively work in progress!
-
-## Credits
-
-Created with Astro.
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## Built from scratch with
+- [Astro](https://astro.build/)
+- [Tailwind](https://tailwindcss.com/)
+- [Tabler Icons](https://www.npmjs.com/package/@tabler/icons-react)
+- ☕️ Tea :)

@@ -1,0 +1,16 @@
+---
+import '@/styles/global.css';
+const { href, isIconButton } = Astro.props;
+const isCurrentPage = !(Astro.url?.pathname === href || Astro.url?.pathname == href + "/" );
+---
+<a
+  href={href}
+  class={`font-link text-3xl hover:text-primary hover:text-4xl transition-scale duration-200 cursor-pointer p-0 ${
+    isCurrentPage ? 'text-text-light dark:text-text-dark ' : 'text-red-700 '
+  } ${
+    isIconButton ? 'm-0 ' : 'ml-4 '
+  }`}
+
+>
+  <slot />
+</a>

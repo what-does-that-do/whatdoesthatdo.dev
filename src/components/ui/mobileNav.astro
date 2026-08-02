@@ -1,0 +1,37 @@
+---
+import '@/styles/global.css';
+import HeaderLink from './headerLink.astro';
+
+import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
+const { id } = Astro.props;
+const currentPage = Astro.url?.pathname;
+---
+<div id={id} class="fixed top-18 left-0 w-full px-2 py-2 bg-transparent z-50">
+    <div class="w-full bg-bg-light/60 dark:bg-bg-dark/60 rounded-xl p-3 backdrop-blur-md">
+        <div class="opacity-100 items-center">
+            <div class="flex">
+                <h1 class="font-display">Where to?</h1>
+
+                <div class="grow"></div>
+
+                <div class="flex items-right gap-0.5">
+                    <HeaderLink href="https://github.com/what-does-that-do/" isIconButton={true}>
+                        <IconBrandGithub className='w-[42px] h-[42px]' />
+                    </HeaderLink>
+                    <HeaderLink href="https://linkedin.com/in/ocorrigan/" isIconButton={true}>
+                        <IconBrandLinkedin className='w-[42px] h-[42px]' />
+                    </HeaderLink>
+                    <HeaderLink href="/contact#email" isIconButton={true}>
+                        <IconMail className='w-[42px] h-[42px]' />
+                    </HeaderLink>
+                </div>
+            </div>
+            
+
+            <HeaderLink href="/">[{currentPage == "/" ? "*" : " "}] Home</HeaderLink><br>
+            <HeaderLink href="/#about">[{currentPage == "/#about" ? "*" : " "}] About</HeaderLink><br>
+            <HeaderLink href="/projects">[{currentPage.startsWith("/projects") ? "*" : " "}] Projects</HeaderLink><br>
+            <HeaderLink href="/contact">[{(currentPage == "/contact" || currentPage == "/contact/") ? "*" : " "}] Contact</HeaderLink>
+        </div>
+    </div>
+</div>

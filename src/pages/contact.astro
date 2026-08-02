@@ -1,0 +1,153 @@
+---
+import MainLayout from "@/layouts/mainLayout.astro";
+import GradientSection from "@/components/ui/gradientSection.astro";
+import '@/styles/global.css';
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+
+import { Item, ItemContent, ItemMedia, ItemActions } from "@/components/ui/item"
+import { IconEye, IconCopy, IconMail, IconSend, IconBrandLinkedin, IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
+import { buttonVariants } from "@/components/ui/button";
+--- 
+
+<MainLayout title="Contact Oliver Corrigan">
+    <GradientSection className="dark h-[190px] pt-22 p-2 lg:px-10 overflow-hidden text-white">
+        <h1 class="font-display text-center">Get In Touch</h1>
+        <p class="text-center pt-2">Hi! Please feel free to reach out to me with any of the following :)</p>
+    </GradientSection>
+
+    <div class="flex flex-col md:flex-row mt-5">
+        <div class="grow"></div>
+
+        <Card className="dark mx-2 my-2 min-w-[400px]">
+            <CardHeader className="text-center">
+                <h1 class="font-display"><IconMail className="inline size-10 pb-1"></IconMail> Email Me</h1>
+                <p>Send me a message!</p>
+            </CardHeader>
+            <CardContent>
+                <Item variant="outline">
+                    <ItemMedia>
+                        <IconMail></IconMail>
+                    </ItemMedia>
+                    <ItemContent>
+                        <h3 onclick="revealEmail()" class="font-link w-full text-2xl" id="email-address">Email hidden!</h3>
+                    </ItemContent>
+                    <ItemActions id="email-buttons" className="hidden">
+                        <a
+                            id="email-copy"
+                            class={"btn cursor-pointer " + buttonVariants({ variant:"outline" })}
+                        >
+                            <IconCopy></IconCopy>
+                        </a>
+                        <a
+                            id="email-send"
+                            class={"btn " + buttonVariants({  })}
+                        >
+                            <IconSend></IconSend>
+                        </a>
+                    </ItemActions>
+                    <ItemActions id="pre-email-buttons">
+                        <a
+                            id="email-reveal"
+                            class={"btn cursor-pointer " + buttonVariants({  })}
+                            onclick="revealEmail()"
+                        >
+                            <IconEye></IconEye>
+                        </a>
+                    </ItemActions>
+                </Item>
+            </CardContent>
+        </Card>
+
+        <Card className="dark mx-2 my-2 min-w-[400px]">
+            <CardHeader className="text-center">
+                <h1 class="font-display"><IconBrandLinkedin className="inline size-10 pb-1"></IconBrandLinkedin> LinkedIn</h1>
+                <p>View my experience and connect with me.</p>
+            </CardHeader>
+            <CardContent>
+                <Item variant="outline">
+                    <ItemMedia>
+                        <IconBrandLinkedin></IconBrandLinkedin>
+                    </ItemMedia>
+                    <ItemContent>
+                        <h3 class="font-link w-full text-2xl">in/ocorrigan</h3>
+                    </ItemContent>
+                    <ItemActions>
+                        <a
+                            href="https://linkedin.com/in/ocorrigan"
+                            class={"btn " + buttonVariants({  })}
+                        >
+                            <IconExternalLink></IconExternalLink>
+                        </a>
+                    </ItemActions>
+                </Item>
+            </CardContent>
+        </Card>
+
+        <Card className="dark mx-2 my-2 min-w-[400px]">
+            <CardHeader className="text-center">
+                <h1 class="font-display"><IconBrandGithub className="inline size-10 pb-1"></IconBrandGithub> GitHub</h1>
+                <p>Take a look at my repos...</p>
+            </CardHeader>
+            <CardContent>
+                <Item variant="outline">
+                    <ItemMedia>
+                        <IconBrandGithub></IconBrandGithub>
+                    </ItemMedia>
+                    <ItemContent>
+                        <h3 class="font-link w-full text-2xl">what-does-that-do</h3>
+                    </ItemContent>
+                    <ItemActions>
+                        <a
+                            href="https://github.com/what-does-that-do"
+                            class={"btn " + buttonVariants({  })}
+                        >
+                            <IconExternalLink></IconExternalLink>
+                        </a>
+                    </ItemActions>
+                </Item>
+            </CardContent>
+        </Card>
+        <div class="grow"></div>
+    </div>
+</MainLayout>
+
+<script>
+    const emailField = document.getElementById("email-address");
+    const emailButtons = document.getElementById("email-buttons");
+    const emailCopy = document.getElementById("email-copy");
+    const emailSend = document.getElementById("email-send");
+    const prefix = [111,108,105,118,101,114]
+    
+    function emailPrefix() {
+        let decrypted = "";
+        prefix.forEach((n, i) => {
+            decrypted += String.fromCharCode(n);
+        });
+        return decrypted;
+    }
+
+    function emailCountdown(prev:number) {
+        if (prev > 0) {
+            emailField.innerHTML = "Revealing in ("+prev+")...";
+            setTimeout(() => {
+                emailCountdown(prev-1);
+            }, 1000);
+        } else {
+            emailField.innerHTML = emailPrefix() + "@" + window.location.host;
+            emailSend.href = "mailto:" + emailField.innerHTML;
+            emailCopy.addEventListener("click", emailClipboard);
+            emailButtons.style.display = "block";
+        }
+    }
+
+    function emailClipboard() {
+        navigator.clipboard.writeText(emailField.innerHTML);
+    }
+
+    function revealEmail() {
+        document.getElementById("pre-email-buttons")?.classList.add("hidden");
+        emailCountdown(5);
+    }
+
+    document.getElementById("email-reveal")?.addEventListener("click", revealEmail);
+</script>

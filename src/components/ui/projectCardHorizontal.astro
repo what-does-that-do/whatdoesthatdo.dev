@@ -1,0 +1,70 @@
+---
+import "@/styles/global.css";
+import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge"
+import LanguageBadges from "./languageBadges.astro";
+import { IconBrandAstro, IconBrandNodejs, IconBrandPython } from "@tabler/icons-react";
+
+// todo: move this language badge to a separate component.
+
+const coverImage = Astro.props.coverImage;
+const title = Astro.props.title;
+const desc = Astro.props.desc;
+const link = Astro.props.link;
+const article = Astro.props.article;
+const languages = Astro.props.languages;
+const openButton = Astro.props.openButton || "View";
+---
+
+<Card className="dark relative mx-auto max-w-[800px] pt-0 shadow flex flex-row pb-0 my-3">
+  <div class="shrink min-w-[100px] max-w-1/4 mx-auto">
+    <img
+      src={coverImage}
+      alt={title}
+      class="relative h-full w-full object-cover mx-auto"
+    />
+  </div>
+  <div class="grow flex flex-col bg-purple">
+    <div class="md:grow"></div>
+    <div class="grow">
+      <CardHeader className="pt-2 pl-0">
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{desc}</CardDescription>
+      </CardHeader>
+      <CardContent className="pl-0">
+          <LanguageBadges languages={languages} />
+      </CardContent>
+      <CardFooter className="pb-2 pl-0">
+        <div class="flex w-full pt-2">
+            { openButton != "hidden" &&
+            <a
+              href={link}
+              class={"grow btn " + buttonVariants({ })}
+              target="_blank"
+            >
+              { openButton }
+            </a>
+            }
+            
+            <a
+              href={article}
+              class={"grow btn " + buttonVariants({ variant: "outline" })}
+            >
+              Learn More
+            </a>
+        </div>
+      </CardFooter>
+    </div>
+    <div class="grow"></div>
+  </div>
+</Card>

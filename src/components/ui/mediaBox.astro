@@ -1,0 +1,9 @@
+---
+import '@/styles/global.css';
+
+const className = Astro.props.className;
+---
+
+<div class={`rounded-2xl shadow-lg overflow-hidden w-full ${className}`}>
+    <slot />
+</div>

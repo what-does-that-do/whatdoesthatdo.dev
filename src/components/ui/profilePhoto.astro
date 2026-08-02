@@ -1,0 +1,10 @@
+---
+import '@/styles/global.css';
+const src = Astro.props.src;
+const size = Astro.props.size;
+const className = Astro.props.className;
+---
+
+<div class={`rounded-full border-white border-3 shadow-xl object-cover overflow-hidden ${className}`} style={`width: ${size}px; height: ${size}px;`}>
+    <img src={src} style={`width: ${size}px; height: ${size}px;`}>
+</div>

@@ -1,0 +1,58 @@
+---
+import "@/styles/global.css";
+import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import LanguageBadges from "./languageBadges.astro";
+
+const coverImage = Astro.props.coverImage;
+const title = Astro.props.title;
+const desc = Astro.props.desc;
+const link = Astro.props.link;
+const article = Astro.props.article;
+const languages = Astro.props.languages;
+const openButton = Astro.props.openButton || "View";
+---
+
+<Card className="dark relative mx-auto w-full min-w-[300px] max-w-sm pt-0 shadow">
+  <div class="absolute inset-0 aspect-video bg-black/35"></div>
+  <img
+    src={coverImage}
+    alt={title}
+    class="relative aspect-video w-full object-cover"
+  />
+  <CardHeader>
+    <CardTitle>{title}</CardTitle>
+    <CardDescription>{desc}</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <LanguageBadges languages={languages} />
+  </CardContent>
+  <div class="grow"></div>
+  <CardFooter>
+    <div class="flex w-full">
+        { openButton != "hidden" &&
+        <a
+          href={link}
+          class={"grow btn " + buttonVariants({ })}
+          target="_blank"
+        >
+          { openButton }
+        </a>}
+        <a
+          href={article}
+          class={"grow btn " + buttonVariants({ variant: "outline" })}
+        >
+          Read Article
+        </a>
+    </div>
+  </CardFooter>
+</Card>

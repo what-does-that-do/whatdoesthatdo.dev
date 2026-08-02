@@ -1,22 +1,205 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { IconMapPin, IconBriefcase, IconArrowNarrowUp, IconArrowNarrowRight, IconArrowNarrowLeft } from "@tabler/icons-react";
+
+import { IconBrandPython, IconBrandCSharp, IconBrandAstro, IconBrandNodejs, IconBrandReactNative, IconFileTypeSql, IconFileTypeHtml, IconFileTypeCss, IconBrandJavascript, IconLetterCSmall } from "@tabler/icons-react";
+
+import MainLayout from "@/layouts/mainLayout.astro";
+import '@/styles/global.css';
+
+import GradientSection from "@/components/ui/gradientSection.astro";
+import ProfilePhoto from "@/components/ui/profilePhoto.astro";
+import ProjectCard from "@/components/ui/projectCard.astro";
+
+import {IndexCarousel} from "@/components/indexCarousel.tsx"
+
+import { Button } from "@/components/ui/button";
+
+const projects = Object.values(import.meta.glob(["./projects/*.md", "./projects/*.mdx"], {eager: true}))
+projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title="what-does-that-do" description="My work in progress portfolio website!" />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Hi, I'm Oli!</h1>
-			<p>Welcome to my work in progress portfolio website. It's a bit empty right now!</p>
-			<p>In the meantime, why not take a look at <a href="https://github.com/what-does-that-do" target="_blank">my Github</a>?</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<MainLayout>
+	<GradientSection className="md:h-[600px] flex flex-col md:flex-row">
+		<div class="order-3 md:order-1 flex flex-col h-full">
+			<h2 class="font-display text-white font-bold text-2xl pt-2 md:pt-0 md:text-4xl md:max-w-[600px]">An enthusiastic student developer, passionate about building full-stack applications to solve real problems.</h2>
+			<div class="grow" />
+			<div>
+				<div class="flex mt-2">
+					<ProfilePhoto src="/general/pfp_192.webp" size="96" className="mr-2"></ProfilePhoto>
+					<!-- MOBILE VIEW -->
+					<div class="md:hidden">
+						<div class="flex flex-row items-start gap-3">
+							<h1 class="font-display text-2xl sm:text-3xl text-white pt-1">Hi, I'm</h1>
+							<h1 class="font-display text-2xl sm:text-5xl text-white pt-1">Oliver</h1>
+						</div>
+						<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Sci. student</p>
+						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
+					</div>
+
+					<!-- DESKTOP VIEW -->
+					<div>
+						<h1 class="hidden md:block font-display text-white md:pt-1">Hi, I'm</h1>
+						<p class="hidden md:block font-display text-5xl text-white pt-3">Oliver</p>
+					</div>
+				</div>
+				
+				<!-- DESKTOP VIEW -->
+				<div class="hidden md:block md:grid grid-cols-1 md:grid-cols-2 grid-cols-row-1 md:grid-row-2 gap-5 overflow-hidden">
+					<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Science student</p>
+					<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="order-2 flex grow" />
+
+		<div class="order-1 md:order-3 justify-self-end grow flex md:w-1/2 h-full">
+			<IndexCarousel client:load images={["/project_images/sr/robot_1.webp", "/project_images/sr/debugging_urbanheights.webp", "/project_images/mammalid/angel.webp", "/project_images/sr/robot_2_cube.webp"]} />
+		</div>
+	</GradientSection>
+
+	<div class="w-full bg-[#0d0730] text-white py-8">
+		<h1 class="font-display text-center">Experience</h1>
+		<p class="text-center pt-2">Here are a few languages (and frameworks) I have experience with.</p>
+
+		<div class="pt-2">
+			<p class="shrink text-center text-xl">
+				<IconBrandPython className="inline size-10" />
+				<IconLetterCSmall className="inline size-15" />
+				<IconBrandCSharp className="inline size-10" />
+				<IconBrandAstro className="inline size-10" />
+				<IconBrandNodejs className="inline size-10" />
+				<IconBrandReactNative className="inline size-10" />
+				<IconFileTypeSql className="inline size-10" />
+				<IconFileTypeHtml className="inline size-10" />
+				<IconFileTypeCss className="inline size-10" />
+				<IconBrandJavascript className="inline size-10" />
+			</p>
+		</div>
+	</div>
+
+	<div class="w-full bg-[#0d0730] text-white py-8">
+		<h1 class="font-display text-center">My Projects</h1>
+		<p class="text-center pt-2">Take a look at the projects and work I've completed!</p>
+		<div class="mx-2 md:mx-10 my-5">
+			<div class="flex">
+				<div class="hidden md:flex flex-col mr-2">
+					<div class="grow"></div>
+					<Button variant="outline" size="icon" className="dark" data-proj-scroll-left>
+						<IconArrowNarrowLeft></IconArrowNarrowLeft>
+					</Button>
+					<div class="grow"></div>
+				</div>
+
+				<div id="project-gallery" class="flex overflow-y-scroll scrollbar-hide gap-1 scroll-smooth fade-x-4" data-proj-gallery>
+					{projects.map((project: any) => (
+						<ProjectCard
+							title={project.frontmatter.title}
+							desc={project.frontmatter.desc}
+							coverImage={project.frontmatter.coverImage}
+							link={project.frontmatter.link}
+							article={project.url}
+							languages={project.frontmatter.languages}
+							openButton={project.frontmatter.openButton}>
+						</ProjectCard>
+					))}
+				</div>
+
+				<div class="hidden md:flex flex-col ml-2">
+					<div class="grow"></div>
+					<Button variant="outline" size="icon" className="dark" data-proj-scroll-right>
+						<IconArrowNarrowRight></IconArrowNarrowRight>
+					</Button>
+					<div class="grow"></div>
+				</div>
+			</div>
+		</div>
+		<div class="flex ">
+			<div class="grow" />
+			<div>
+				<Button variant="outline" size="icon" className="dark md:hidden" data-proj-scroll-left>
+					<IconArrowNarrowLeft></IconArrowNarrowLeft>
+				</Button>
+				<Button data-view-all-btn>
+					View all
+				</Button>
+				<Button variant="outline" size="icon" className="dark md:hidden" data-proj-scroll-right>
+					<IconArrowNarrowRight></IconArrowNarrowRight>
+				</Button>
+
+			</div>
+			<div class="grow" />
+		</div>
+	</div>
+
+	<GradientSection pageTop="0" className="w-full" colour="green">
+		<h1 id="about" class="font-display text-center">About Me</h1>
+
+		<div class="flex flex-col md:flex-row my-5">
+			<div class="order-2 md:order-1 grow flex flex-col md:pr-5 my-2">
+				<div class="grow" />
+
+				<h2 class="font-display text-2xl font-bold">Hello!</h2>
+				<p>Hi, I’m Oliver Corrigan, a friendly and enthusiastic Computer Science student currently studying a BSc Computer Science with a year in industry at the <a class="inline-link" href="https://www.uea.ac.uk/" target="_blank">University of East Anglia</a>. I'm curious, always keen to learn "what does that do", and thrive when working in a team!</p>
+				
+				<br>
+				<h3 class="font-display text-xl font-bold">Interests</h3>
+				<p>I am interested in a variety of topics within software development, most recently including: AI and machine learning, backend databases and networks (I love the logic behind them!), UI/UX design and building electronics (including robots). I'm still discovering my niche!</p>
+
+				<br>
+				<h3 class="font-display text-xl font-bold">Outside Tech</h3>
+				<p>In my spare time, you can often find me playing violin (particularly folk music!), indoor bouldering, or supporting wildlife conservation projects and charities, including the <a class="inline-link" href="https://www.suffolkhedgehoghospital.com/" target="_blank">Suffolk Hedgehog Hospital</a> (the cause behind my AI wildlife detection app - <a class="inline-link" href="/projects/mammalid">MammalID</a>!)</p>
+				<div class="grow" />
+			</div>
+			<img class="order-1 md:order-2 shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-2/5" src="/general/climbing_hang.webp">
+		</div>
+
+		<div class="flex flex-col md:flex-row mb-5">
+			<div class="order-2 grow flex flex-col md:pl-5 my-2">
+				<div class="grow" />
+
+				<h2 class="font-display text-2xl font-bold">Background & Experience</h2>
+				<p>I am passionate about creating projects that solve real world problems. I love to build solutions with either programming, electronics, 3D printing or a mix of all three!</p>
+				
+				<br>
+				<h3 class="font-display text-xl font-bold">Software Experience</h3>
+				<p>I have first-hand experience working with a large codebase, modernising and maintaining code across multiple frameworks with Git, and reviewing and proposing changes to keep production releases stable and reliable.</p>
+				<p class="pt-2">I've used a range of different languages and frameworks, across my robotics work and throughout my personal projects for clients and coursework.</p>
+				
+				<br>
+				<h3 class="font-display text-xl font-bold">Hardware Experience</h3>
+				<p>Throughout my projects, I have also gained hardware skills including soldering, circuit design, and 3D CAD modelling and printing. I really enjoy building projects across the entire stack!</p>
+
+				<p><br>Further information about my past experience can be found in my <a class="inline-link" href="/projects">projects</a> or on my <a class="inline-link" href="https://www.linkedin.com/in/ocorrigan/" target="_blank">LinkedIn profile</a>.</p>
+
+				<div class="grow" />
+			</div>
+			<img class="order-1 shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-2/5" src="/project_images/sr/robot_1.webp">
+		</div>
+	</GradientSection>
+
+</MainLayout>
+
+<script>
+// Find our component DOM on the page.
+const rightScroll = document.querySelectorAll('[data-proj-scroll-right]');
+const leftScroll = document.querySelectorAll('[data-proj-scroll-left]');
+const viewAll = document.querySelector('[data-view-all-btn]');
+const projects = document.getElementById("project-gallery");
+
+function projScroll(right: boolean) {
+	if (right) {
+		projects.scrollLeft += 250;
+	} else {
+		projects.scrollLeft -= 250;
+	}
+}
+
+rightScroll.forEach((btn) => {
+	btn.addEventListener("click", function() {projScroll(true)})
+})
+leftScroll.forEach((btn) => {
+	btn.addEventListener("click", function() {projScroll(false)})
+})
+viewAll?.addEventListener("click", function() {window.location.href = '/projects'})
+</script>
