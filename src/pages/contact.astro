@@ -5,7 +5,7 @@ import '@/styles/global.css';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 import { Item, ItemContent, ItemMedia, ItemActions } from "@/components/ui/item"
-import { IconEye, IconCopy, IconMail, IconSend, IconBrandLinkedin, IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
+import { IconEye, IconCopy, IconMail, IconSend, IconBrandDiscord, IconBrandLinkedin, IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
 import { buttonVariants } from "@/components/ui/button";
 --- 
 
@@ -99,6 +99,31 @@ import { buttonVariants } from "@/components/ui/button";
                     <ItemActions>
                         <a
                             href="https://github.com/what-does-that-do"
+                            class={"btn " + buttonVariants({  })}
+                        >
+                            <IconExternalLink></IconExternalLink>
+                        </a>
+                    </ItemActions>
+                </Item>
+            </CardContent>
+        </Card>
+
+        <Card className="dark mx-2 my-2 min-w-[400px]">
+            <CardHeader className="text-center">
+                <h1 class="font-display"><IconBrandDiscord className="inline size-10 pb-1"></IconBrandDiscord> Discord</h1>
+                <p>Send me a DM!</p>
+            </CardHeader>
+            <CardContent>
+                <Item variant="outline">
+                    <ItemMedia>
+                        <IconBrandDiscord></IconBrandDiscord>
+                    </ItemMedia>
+                    <ItemContent>
+                        <h3 class="font-link w-full text-2xl">what_does_that_do</h3>
+                    </ItemContent>
+                    <ItemActions>
+                        <a
+                            href="https://discord.com/users/what_does_that_do"
                             class={"btn " + buttonVariants({  })}
                         >
                             <IconExternalLink></IconExternalLink>
