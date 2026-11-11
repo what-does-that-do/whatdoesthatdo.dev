@@ -1,7 +1,7 @@
 ---
-import { IconMapPin, IconBriefcase, IconArrowNarrowUp, IconArrowNarrowRight, IconArrowNarrowLeft } from "@tabler/icons-react";
+import { IconMapPin, IconBriefcase, IconArrowNarrowUp, IconArrowNarrowRight, IconArrowNarrowLeft, IconCoffee } from "@tabler/icons-react";
 
-import { IconBrandPython, IconBrandCSharp, IconBrandAstro, IconBrandNodejs, IconBrandReactNative, IconFileTypeSql, IconFileTypeHtml, IconFileTypeCss, IconBrandJavascript, IconLetterCSmall } from "@tabler/icons-react";
+import { IconBrandPython, IconBrandCSharp, IconBrandAstro, IconBrandNodejs, IconBrandReactNative, IconFileTypeSql, IconFileTypeHtml, IconFileTypeCss, IconBrandJavascript } from "@tabler/icons-react";
 
 import MainLayout from "@/layouts/mainLayout.astro";
 import '@/styles/global.css';
@@ -33,7 +33,7 @@ projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 							<h1 class="font-display text-2xl sm:text-5xl text-white pt-1">Oliver</h1>
 						</div>
 						<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Sci. student</p>
-						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
+						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> UEA, Norwich</p>
 					</div>
 
 					<!-- DESKTOP VIEW -->
@@ -46,7 +46,7 @@ projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 				<!-- DESKTOP VIEW -->
 				<div class="hidden md:block md:grid grid-cols-1 md:grid-cols-2 grid-cols-row-1 md:grid-row-2 gap-5 overflow-hidden">
 					<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Science student</p>
-					<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
+					<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> UEA, Norwich</p>
 				</div>
 			</div>
 		</div>
@@ -65,7 +65,7 @@ projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 		<div class="pt-2">
 			<p class="shrink text-center text-xl">
 				<IconBrandPython className="inline size-10" />
-				<IconLetterCSmall className="inline size-15" />
+				<IconCoffee className="inline size-10" />
 				<IconBrandCSharp className="inline size-10" />
 				<IconBrandAstro className="inline size-10" />
 				<IconBrandNodejs className="inline size-10" />
@@ -139,19 +139,19 @@ projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 			<div class="order-2 md:order-1 grow flex flex-col md:pr-5 my-2">
 				<div class="grow" />
 
-				<h2 class="font-display text-2xl font-bold">Hello!</h2>
-				<p>Hi, I’m Oliver Corrigan, a friendly and enthusiastic Computer Science student currently studying a BSc Computer Science with a year in industry at the <a class="inline-link" href="https://www.uea.ac.uk/" target="_blank">University of East Anglia</a>. I'm curious, always keen to learn "what does that do", and thrive when working in a team!</p>
+				<h2 class="font-display text-2xl font-bold">👋 Hello!</h2>
+				<p>Hi, I’m Oliver Corrigan, a friendly and enthusiastic Computer Science student currently studying a BSc Computer Science with a year in industry (during 2028/29) at the <a class="inline-link" href="https://www.uea.ac.uk/" target="_blank">University of East Anglia</a>. I'm curious, always keen to learn "what does that do", and thrive when working in a team!</p>
 				
 				<br>
-				<h3 class="font-display text-xl font-bold">Interests</h3>
+				<h3 class="font-display text-xl font-bold">👨‍💻 Interests</h3>
 				<p>I am interested in a variety of topics within software development, most recently including: AI and machine learning, backend databases and networks (I love the logic behind them!), UI/UX design and building electronics (including robots). I'm still discovering my niche!</p>
 
 				<br>
-				<h3 class="font-display text-xl font-bold">Outside Tech</h3>
+				<h3 class="font-display text-xl font-bold">🎻🧗‍♂️ Outside Tech</h3>
 				<p>In my spare time, you can often find me playing violin (particularly folk music!), indoor bouldering, or supporting wildlife conservation projects and charities, including the <a class="inline-link" href="https://www.suffolkhedgehoghospital.com/" target="_blank">Suffolk Hedgehog Hospital</a> (the cause behind my AI wildlife detection app - <a class="inline-link" href="/projects/mammalid">MammalID</a>!)</p>
 				<div class="grow" />
 			</div>
-			<img class="order-1 md:order-2 shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-2/5" src="/general/climbing_hang.webp">
+			<img class="order-1 md:order-2 shrink rounded-2xl shadow-lg overflow-hidden w-full md:max-w-2/5" src="/general/rr_climbing.webp">
 		</div>
 
 		<div class="flex flex-col md:flex-row mb-5">
@@ -162,12 +162,12 @@ projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 				<p>I am passionate about creating projects that solve real world problems. I love to build solutions with either programming, electronics, 3D printing or a mix of all three!</p>
 				
 				<br>
-				<h3 class="font-display text-xl font-bold">Software Experience</h3>
+				<h3 class="font-display text-xl font-bold">⌨️ Software Experience</h3>
 				<p>I have first-hand experience working with a large codebase, modernising and maintaining code across multiple frameworks with Git, and reviewing and proposing changes to keep production releases stable and reliable.</p>
 				<p class="pt-2">I've used a range of different languages and frameworks, across my robotics work and throughout my personal projects for clients and coursework.</p>
 				
 				<br>
-				<h3 class="font-display text-xl font-bold">Hardware Experience</h3>
+				<h3 class="font-display text-xl font-bold">🦾 Hardware Experience</h3>
 				<p>Throughout my projects, I have also gained hardware skills including soldering, circuit design, and 3D CAD modelling and printing. I really enjoy building projects across the entire stack!</p>
 
 				<p><br>Further information about my past experience can be found in my <a class="inline-link" href="/projects">projects</a> or on my <a class="inline-link" href="https://www.linkedin.com/in/ocorrigan/" target="_blank">LinkedIn profile</a>.</p>
