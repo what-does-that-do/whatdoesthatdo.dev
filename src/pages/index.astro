@@ -1,7 +1,7 @@
 ---
-import { IconMapPin, IconBriefcase, IconArrowNarrowUp, IconArrowNarrowRight, IconArrowNarrowLeft } from "@tabler/icons-react";
+import { IconMapPin, IconBriefcase, IconArrowNarrowUp, IconArrowNarrowRight, IconArrowNarrowLeft, IconCoffee } from "@tabler/icons-react";
 
-import { IconBrandPython, IconBrandCSharp, IconBrandAstro, IconBrandNodejs, IconBrandReactNative, IconFileTypeSql, IconFileTypeHtml, IconFileTypeCss, IconBrandJavascript, IconLetterCSmall } from "@tabler/icons-react";
+import { IconBrandPython, IconBrandCSharp, IconBrandAstro, IconBrandNodejs, IconBrandReactNative, IconFileTypeSql, IconFileTypeHtml, IconFileTypeCss, IconBrandJavascript } from "@tabler/icons-react";
 
 import MainLayout from "@/layouts/mainLayout.astro";
 import '@/styles/global.css';
@@ -33,7 +33,6 @@ projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 							<h1 class="font-display text-2xl sm:text-5xl text-white pt-1">Oliver</h1>
 						</div>
 						<p class="font-display text-white"><IconBriefcase className="inline"></IconBriefcase> BSc Computer Sci. student</p>
-						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> Cambridge, UK</p>
 						<p class="font-display text-white"><IconMapPin className="inline"></IconMapPin> UEA, Norwich</p>
 					</div>
 
@@ -66,7 +65,7 @@ projects.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 		<div class="pt-2">
 			<p class="shrink text-center text-xl">
 				<IconBrandPython className="inline size-10" />
-				<IconLetterCSmall className="inline size-15" />
+				<IconCoffee className="inline size-10" />
 				<IconBrandCSharp className="inline size-10" />
 				<IconBrandAstro className="inline size-10" />
 				<IconBrandNodejs className="inline size-10" />
